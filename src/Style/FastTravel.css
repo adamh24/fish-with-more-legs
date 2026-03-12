@@ -1,0 +1,8 @@
+.fast-travel-container {
+    width: 200px;
+    min-height: 100px;
+    margin: 16px auto 0; /* top spacing, center horizontally */
+    padding: 12px;
+    background: #f8f9fa;
+    border: 1px solid #d0d3d8;
+}
