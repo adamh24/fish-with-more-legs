@@ -1,0 +1,6 @@
+Background - rgb(6, 10, 7)
+Main Text - rgb(82, 183, 136)
+Tabs - rgb(69, 77, 75)
+Sub Text - rgb(184, 228, 204)
+Accents Subtle - Fern 556F44
+Accents Bold - Sandy Brown F5AC72
