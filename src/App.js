@@ -5,6 +5,7 @@ import Bubbles from "./Components/Bubbles"
 import './Style/App.css'
 import Home from "./Pages/Home"
 import Recipes from "./Pages/Recipes"
+import Courses from "./Pages/Courses"
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
 
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
+          <Route path="/courses" element={<Courses />} />
         
         </Routes>
 

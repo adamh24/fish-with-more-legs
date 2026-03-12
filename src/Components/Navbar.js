@@ -22,7 +22,7 @@ function Navbar() {
 
   return (
     <nav>
-        <div className='tab'>Courses</div>
+        <Link className='tab' to='/courses'>Courses</Link>
         <Link className='tab' to='/recipes'>Recipes</Link>
         <div className="title">Fish With Legs</div>
         <div className='tab'>About</div>
