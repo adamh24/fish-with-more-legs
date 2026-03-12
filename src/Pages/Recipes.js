@@ -9,7 +9,6 @@ import '../Style/Recipes.css';
 function CocktailDetail({ cocktail, onClose }) {
   if (!cocktail) return null;
 
-  return (
   return ReactDOM.createPortal(
     <div className="detail-overlay" onClick={onClose}>
       <div className="detail-panel" onClick={e => e.stopPropagation()}>
@@ -73,8 +72,6 @@ function CocktailDetail({ cocktail, onClose }) {
 
       </div>
     </div>
-    </div>,
-    document.body
   );
 }
 
