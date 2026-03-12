@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ReactDOM from 'react-dom';
 import cocktailsData from '../data/cocktails.json';
 import modifiersData from '../data/modifiers.json';
 import '../Style/Recipes.css';
@@ -8,7 +9,7 @@ import '../Style/Recipes.css';
 function CocktailDetail({ cocktail, onClose }) {
   if (!cocktail) return null;
 
-  return (
+  return ReactDOM.createPortal(
     <div className="detail-overlay" onClick={onClose}>
       <div className="detail-panel" onClick={e => e.stopPropagation()}>
 
@@ -70,7 +71,8 @@ function CocktailDetail({ cocktail, onClose }) {
         )}
 
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
