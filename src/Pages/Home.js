@@ -1,6 +1,7 @@
 import Hero from '../Components/Hero';
 import '../Style/Home.css';
 
+
 function Home() {
   const classicCocktails = [
     'Negroni',
