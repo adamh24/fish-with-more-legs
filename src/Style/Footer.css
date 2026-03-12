@@ -1,0 +1,88 @@
+.site-footer {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid rgba(82, 183, 136, 0.12);
+    margin-top: 20px;
+}
+
+.footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px 6%;
+    flex-wrap: wrap;
+}
+
+/* ─── Brand ───────────────────────────────────────────────────────────────── */
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.footer-title {
+    font-family: 'Antonio', sans-serif;
+    font-size: 1.4rem;
+    color: rgb(82, 183, 136);
+    letter-spacing: 0.02em;
+}
+
+.footer-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: rgb(101, 119, 111);
+    letter-spacing: 0.1em;
+}
+
+/* ─── Nav Links ───────────────────────────────────────────────────────────── */
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.footer-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: rgb(101, 119, 111);
+    text-decoration: none;
+    letter-spacing: 0.08em;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: rgb(184, 228, 204);
+}
+
+/* ─── Legal ───────────────────────────────────────────────────────────────── */
+
+.footer-legal {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+    max-width: unset;
+    text-align: right;
+    align-items: flex-end;
+}
+
+.footer-legal span {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: rgba(101, 119, 111, 0.65);
+    line-height: 1.6;
+    letter-spacing: 0.04em;
+    max-width: 480px;
+}
+
+.footer-legal span:first-child {
+    color: rgba(184, 228, 204, 0.45);
+    font-size: 0.72rem;
+}

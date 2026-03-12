@@ -7,6 +7,7 @@ import Home from "./Pages/Home"
 import Recipes from "./Pages/Recipes"
 import Courses from "./Pages/Courses"
 import ScrollToTop from "./Components/ScrollToTop"
+import Footer from "./Components/Footer"
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
           <Route path="/courses" element={<Courses />} />
         
         </Routes>
+
+        <Footer />
 
       </Router>
     
