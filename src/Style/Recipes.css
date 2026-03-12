@@ -1,0 +1,457 @@
+/* ─── Page Layout ─────────────────────────────────────────────────────────── */
+
+.recipes-container {
+    min-height: 100vh;
+    padding: 120px 6% 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.recipes-header {
+    margin-bottom: 50px;
+}
+
+.recipes-title {
+    font-family: 'Antonio', sans-serif;
+    font-size: 4rem;
+    color: rgb(82, 183, 136);
+    margin: 0 0 28px 0;
+    display: inline-block;
+    border-bottom: 2px solid rgb(82, 183, 136);
+    padding-bottom: 12px;
+}
+
+/* ─── Section Tab Nav ─────────────────────────────────────────────────────── */
+
+.recipes-nav {
+    display: flex;
+    gap: 8px;
+}
+
+.recipes-tab {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.95rem;
+    color: rgb(101, 119, 111);
+    background: none;
+    border: 1px solid rgb(69, 77, 75);
+    padding: 8px 28px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.06em;
+    text-transform: lowercase;
+}
+
+.recipes-tab:hover {
+    color: rgb(184, 228, 204);
+    border-color: rgb(184, 228, 204);
+}
+
+.recipes-tab.active {
+    color: rgb(82, 183, 136);
+    border-color: rgb(82, 183, 136);
+    background: rgba(82, 183, 136, 0.06);
+}
+
+/* ─── Section Transition ──────────────────────────────────────────────────── */
+
+.section-content {
+    animation: fadeUp 0.3s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Shared Badges & Tags ────────────────────────────────────────────────── */
+
+.menu-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: rgb(82, 183, 136);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    border: 1px solid rgba(82, 183, 136, 0.4);
+    padding: 2px 9px;
+    display: inline-block;
+}
+
+.featured-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: rgb(6, 10, 7);
+    background: rgb(245, 172, 114);
+    padding: 3px 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: inline-block;
+}
+
+.flavor-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: rgb(101, 119, 111);
+    background: rgba(85, 111, 68, 0.14);
+    border: 1px solid rgba(85, 111, 68, 0.28);
+    padding: 2px 9px;
+}
+
+.flavor-tag.small {
+    font-size: 0.65rem;
+    padding: 1px 7px;
+}
+
+/* ─── Cocktails Grid ──────────────────────────────────────────────────────── */
+
+.cocktails-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 22px;
+}
+
+.cocktail-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(82, 183, 136, 0.14);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    overflow: hidden;
+}
+
+.cocktail-card:hover {
+    border-color: rgba(82, 183, 136, 0.5);
+    transform: translateY(-4px);
+    background: rgba(82, 183, 136, 0.05);
+}
+
+.card-image {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+    background: rgb(10, 17, 13);
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.65;
+    transition: opacity 0.25s ease;
+}
+
+.cocktail-card:hover .card-image img {
+    opacity: 0.8;
+}
+
+.card-image .featured-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.card-title {
+    font-family: 'Antonio', sans-serif;
+    font-size: 1.5rem;
+    color: rgb(184, 228, 204);
+    margin: 0;
+}
+
+.card-description {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    color: rgb(101, 119, 111);
+    line-height: 1.55;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-flavors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 4px;
+}
+
+/* ─── Cocktail Detail Side Panel ──────────────────────────────────────────── */
+
+.detail-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 10, 7, 0.75);
+    z-index: 200;
+    display: flex;
+    justify-content: flex-end;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.detail-panel {
+    width: 480px;
+    max-width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    background: rgb(9, 15, 11);
+    border-left: 1px solid rgba(82, 183, 136, 0.25);
+    padding: 56px 40px 60px;
+    animation: slideIn 0.3s ease;
+    position: relative;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0); }
+}
+
+.detail-close {
+    position: absolute;
+    top: 22px;
+    right: 26px;
+    background: none;
+    border: 1px solid rgba(101, 119, 111, 0.4);
+    color: rgb(101, 119, 111);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Mono', monospace;
+    padding: 4px 10px;
+    line-height: 1;
+}
+
+.detail-close:hover {
+    color: rgb(184, 228, 204);
+    border-color: rgb(184, 228, 204);
+}
+
+.detail-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.detail-title {
+    font-family: 'Antonio', sans-serif;
+    font-size: 2.8rem;
+    color: rgb(82, 183, 136);
+    margin: 0 0 8px 0;
+    line-height: 1.1;
+}
+
+.detail-description {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.88rem;
+    color: rgb(101, 119, 111);
+    line-height: 1.75;
+    margin: 16px 0;
+}
+
+.detail-flavors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin: 14px 0;
+}
+
+.detail-section {
+    margin: 22px 0;
+    border-top: 1px solid rgba(82, 183, 136, 0.1);
+    padding-top: 18px;
+}
+
+.detail-section h3,
+.detail-section h4 {
+    font-family: 'Antonio', sans-serif;
+    font-size: 1rem;
+    color: rgb(184, 228, 204);
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+.detail-section ul,
+.detail-section ol {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.84rem;
+    color: rgb(101, 119, 111);
+    padding-left: 20px;
+    line-height: 2;
+    margin: 0;
+}
+
+.detail-section li {
+    margin-bottom: 2px;
+}
+
+/* ─── Modifiers / Ingredients Grid ───────────────────────────────────────── */
+
+.modifiers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 20px;
+}
+
+.modifier-card {
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(82, 183, 136, 0.14);
+    padding: 22px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.modifier-card:hover,
+.modifier-card.expanded {
+    border-color: rgba(82, 183, 136, 0.45);
+    background: rgba(82, 183, 136, 0.04);
+}
+
+.modifier-header {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.category-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    color: rgb(245, 172, 114);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    border: 1px solid rgba(245, 172, 114, 0.4);
+    padding: 2px 9px;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.modifier-brief {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.83rem;
+    color: rgb(101, 119, 111);
+    margin: 0;
+    font-style: italic;
+}
+
+.modifier-expand-hint {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: rgba(82, 183, 136, 0.5);
+    letter-spacing: 0.06em;
+    margin-top: 4px;
+}
+
+.modifier-detail {
+    margin-top: 18px;
+    border-top: 1px solid rgba(82, 183, 136, 0.1);
+    padding-top: 16px;
+    animation: fadeUp 0.2s ease;
+}
+
+/* ─── Menus Section ───────────────────────────────────────────────────────── */
+
+.menus-container {
+    max-width: 860px;
+}
+
+.menu-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(82, 183, 136, 0.18);
+    margin-bottom: 36px;
+    gap: 0;
+}
+
+.menu-tab {
+    font-family: 'Antonio', sans-serif;
+    font-size: 1.25rem;
+    color: rgb(101, 119, 111);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 10px 32px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: -1px;
+    letter-spacing: 0.04em;
+}
+
+.menu-tab:hover {
+    color: rgb(184, 228, 204);
+}
+
+.menu-tab.active {
+    color: rgb(82, 183, 136);
+    border-bottom-color: rgb(82, 183, 136);
+}
+
+.menu-cocktail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.menu-cocktail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 24px;
+    border: 1px solid rgba(82, 183, 136, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.menu-cocktail-item:hover {
+    border-color: rgba(82, 183, 136, 0.4);
+    background: rgba(82, 183, 136, 0.05);
+}
+
+.menu-cocktail-left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-cocktail-title {
+    font-family: 'Antonio', sans-serif;
+    font-size: 1.5rem;
+    color: rgb(184, 228, 204);
+}
+
+.menu-cocktail-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: rgb(101, 119, 111);
+    max-width: 420px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.menu-cocktail-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.menu-cocktail-flavors {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}

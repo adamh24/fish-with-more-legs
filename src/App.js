@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar"
 import Bubbles from "./Components/Bubbles"
 import './Style/App.css'
 import Home from "./Pages/Home"
+import Recipes from "./Pages/Recipes"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
 
           <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Recipes />} />
         
         </Routes>
 
