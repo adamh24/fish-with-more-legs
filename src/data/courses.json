@@ -1,0 +1,198 @@
+[
+  {
+    "id": "FWL_1",
+    "code": "FWL_1",
+    "title": "Teaching Fish to Walk",
+    "subtitle": "Beginner Bartending Development Course",
+    "level": "Beginner",
+    "duration": "1 Day",
+    "schedule_time": "10:00 – 15:30",
+    "prerequisites": "No formal experience required.",
+    "overview": "Teaching Fish to Walk is a foundational training programme designed to introduce new bartenders to the core skills, knowledge, and professional behaviours required in a modern bar environment. This one-day course provides a structured, academically grounded orientation to the responsibilities of bar work, legal compliance, practical skill-building, customer interaction, and product understanding.",
+    "objectives": [
+      "Understand regulations and legal procedure for the service of alcohol.",
+      "Complete legally required certificates for food and beverage service.",
+      "Use bartending tools, techniques and machinery.",
+      "Achieve a competent level of customer service.",
+      "Develop knowledge in beer and wine."
+    ],
+    "modules": [
+      {
+        "id": 1,
+        "title": "Regulations and Certificates",
+        "topics": [
+          {
+            "title": "Alcohol Licensing",
+            "points": [
+              "2-hour alcohol licensing training.",
+              "Alcohol age awareness training."
+            ]
+          },
+          {
+            "title": "Food Safety and Hygiene",
+            "points": [
+              "Food safety and hygiene training.",
+              "Allergen awareness training."
+            ]
+          },
+          {
+            "title": "Health and Safety",
+            "points": [
+              "Health and safety training."
+            ]
+          },
+          {
+            "title": "Fire Safety",
+            "points": [
+              "Fire safety training.",
+              "Participants granted recognised certifications upon completion."
+            ]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Bartending Skills",
+        "topics": [
+          {
+            "title": "Using Bar Equipment",
+            "points": [
+              "Properly and efficiently using jiggers and measures.",
+              "Understanding ice etiquette and how to cleanly handle ice."
+            ]
+          },
+          {
+            "title": "Serving Drinks",
+            "points": [
+              "Understanding glass handling and safety.",
+              "Understanding presentation, consistency and recognising the importance.",
+              "Being proficient in wine service including opening bottles, table service and storage.",
+              "Pouring pints consistently and without waste."
+            ]
+          },
+          {
+            "title": "Bar Prep",
+            "points": [
+              "Safely cutting and prepping garnishes.",
+              "Creating a list to effectively prep and stock the bar ready for service."
+            ]
+          },
+          {
+            "title": "Cleanliness and Organisation",
+            "points": [
+              "Understanding the importance of a clean bar and how to maintain it.",
+              "Organising stations before service and maintaining them during.",
+              "Understanding efficient and smooth strategies of service with ways to adapt for personal styles."
+            ]
+          },
+          {
+            "title": "Using Machinery",
+            "points": [
+              "Operating post mix guns and machines.",
+              "Operating and cleaning glass-washes."
+            ]
+          },
+          {
+            "title": "Cellar Use and Stock Management",
+            "points": [
+              "Operating, maintaining and changing beer lines and kegs.",
+              "Understanding how to efficiently stock and maintain a cellar."
+            ]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Customer Service",
+        "topics": [
+          {
+            "title": "Key Skills",
+            "points": [
+              "Understanding valuable aspects of customer service and steps to deliver it.",
+              "Working naturally and in balance with guests.",
+              "Understanding the importance of welcoming guests and personalised service.",
+              "Remaining calm and composed within a high stress environment."
+            ]
+          },
+          {
+            "title": "Sales Techniques",
+            "points": [
+              "Using suggestive selling, menu anchoring and the \"Two Choice Close\", and when it is appropriate to do so.",
+              "Using storytelling and product knowledge alongside situational selling to personalise guest interactions.",
+              "Understanding the importance of check-back timing and its effects."
+            ]
+          },
+          {
+            "title": "Dealing with Difficult Guests",
+            "points": [
+              "Coping with frustration behind the bar.",
+              "Managing rude, aggressive and inappropriate guests and what action to take in specific situations.",
+              "Learning the correct way to say NO when refusing service or unable to complete an order.",
+              "Identifying the importance and use of team communication and back-up.",
+              "Understanding incident reporting procedures, ejection protocols and aftercare."
+            ]
+          },
+          {
+            "title": "Safety Working with Guests",
+            "points": [
+              "Identifying inappropriate comments, touching or imitation and how to proceed.",
+              "Safely intervening if a guest is harassing another guest.",
+              "Recognising when to call security/management.",
+              "Handling sexual harassment and inappropriate behaviour towards yourself.",
+              "Understanding incident reporting procedures, ejection protocols and aftercare."
+            ]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Theory",
+        "topics": [
+          {
+            "title": "Beer",
+            "points": [
+              "A brief history of beer in Great Britain.",
+              "The production of beer.",
+              "The classification of beer, common regions, flavour profiles and popular brands.",
+              "Tasting."
+            ]
+          },
+          {
+            "title": "Wine",
+            "points": [
+              "A brief history of wine throughout the world.",
+              "The production of wine.",
+              "The classification of wine, common regions, flavour profiles and popular styles.",
+              "Tasting."
+            ]
+          }
+        ]
+      }
+    ],
+    "schedule": [
+      { "time": "10:00", "duration": "15 mins",   "session": "Introduction" },
+      { "time": "10:15", "duration": "1.5 hours",  "session": "Regulations and Certificates" },
+      { "time": "11:45", "duration": "45 mins",   "session": "Bartending Skills — Section 1" },
+      { "time": "12:30", "duration": "30 mins",   "session": "Lunch" },
+      { "time": "13:00", "duration": "30 mins",   "session": "Bartending Skills — Section 2" },
+      { "time": "13:30", "duration": "1 hour",    "session": "Customer Service" },
+      { "time": "14:30", "duration": "45 mins",   "session": "Theory" },
+      { "time": "15:15", "duration": "15 mins",   "session": "Summary" }
+    ],
+    "assessment": {
+      "required": false,
+      "notes": "No assessment or test required. Attendance will grant a pass.",
+      "certification": "Successful participants will receive a Certificate of Completion."
+    },
+    "resources": [
+      "Access to a functioning bar (no external equipment required).",
+      "WIFI connection.",
+      "Product samples: beer and wine.",
+      "Participants are encouraged to bring note taking stationery (optional)."
+    ],
+    "policies": [
+      "Students are expected to maintain professional behaviour, respect fellow learners, and adhere to health and safety standards.",
+      "Any participant that does not follow the Code of Conduct will be removed from the course and will not achieve the certification."
+    ]
+  }
+]
