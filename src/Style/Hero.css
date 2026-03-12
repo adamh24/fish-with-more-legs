@@ -1,8 +1,11 @@
 .hero-container {
     display: flex;
     justify-content: space-between;
-    padding: 270px 0px;
+    align-items: center;
     width: 100%;
+    min-height: 82vh;
+    padding: 80px 0 40px;
+    box-sizing: border-box;
 }
 
 .hero-textbox {
