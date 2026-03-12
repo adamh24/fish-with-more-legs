@@ -1,0 +1,139 @@
+[
+    {
+        "id": 1,
+        "catagory": "Foams",
+        "title": "Chocolate Raspberry Foam",
+        "breif": "Bitter-sweet topping for the pastel girlies",
+        "image": "./assets/cocktail1.png",
+        "description": "Fresh raspberry and cocoa creamy cocktail foam. Inspired by a chocolate selection from Hotel Chocolat, this bitter sweet topping was created to accompany a pistatio washed bourbon, with its dark bottle green colour and the foam's rose tint. It's the perfect treat for the pastel girlies",
+        "ingredients": [
+            "Cocoa Bitter / Hot Chocolate Powder",
+            "Fresh Raspberries",
+            "Vegan Cream"
+        ],
+
+        "instructions": [
+            "Add all ingredients to a cream whipper.",
+            "Seel and charge with 2 NO2 charges",
+            "Shake vigorously for 10 seconds.",
+            "Chill in a freezer for 10 minutes.",
+            "Shake again for another 10 seconds",
+            "SQUIRT WITH PURPOSE!"
+        ],
+
+        "notes": [
+            "If you do not own a cream whipper, the ingredients can be hand or machine whipped"
+        ]
+
+    },
+
+    {
+        "id": 2,
+        "catagory": "Foams",
+        "title": "Pineapple coconut Foam",
+        "breif": "Bitter-sweet topping for the pastel girlies",
+        "image": "./assets/cocktail1.png",
+        "description": "Chocolaty, Raspberryey foam like think",
+        "ingredients": [
+            "pineapple",
+            "coconut",
+            "Foam"
+        ],
+        "instructions": [
+            "Add all ingredients to a squirty can.",
+            "Shake vigorously for 15-20 seconds.",
+            "chill for time.",
+            "SQUIRT."
+        ],
+        "pairings": [
+            "Chocolate desserts",
+            "Cheesecake",
+            "Breasts"
+        ],
+        "notes": [
+            "Squirt with purpose!"
+        ]
+
+    },
+    {
+        "id": 3,
+        "title": "Pistacio Foam",
+        "flavors": ["Chocolate", "Raspberry", "Foam"],
+        "image": "./assets/cocktail1.png",
+        "description": "Chocolaty, Raspberryey foam like think",
+        "ingredients": [
+            "Chocolate",
+            "Raspberry",
+            "Foam"
+        ],
+        "instructions": [
+            "Add all ingredients to a squirty can.",
+            "Shake vigorously for 15-20 seconds.",
+            "chill for time.",
+            "SQUIRT."
+        ],
+        "pairings": [
+            "Chocolate desserts",
+            "Cheesecake",
+            "Breasts"
+        ],
+        "notes": [
+            "Squirt with purpose!"
+        ]
+
+    },
+    {
+        "id": 4,
+        "title": "Grenadine Foam",
+        "flavors": ["Chocolate", "Raspberry", "Foam"],
+        "image": "./assets/cocktail1.png",
+        "description": "Chocolaty, Raspberryey foam like think",
+        "ingredients": [
+            "Chocolate",
+            "Raspberry",
+            "Foam"
+        ],
+        "instructions": [
+            "Add all ingredients to a squirty can.",
+            "Shake vigorously for 15-20 seconds.",
+            "chill for time.",
+            "SQUIRT."
+        ],
+        "pairings": [
+            "Chocolate desserts",
+            "Cheesecake",
+            "Breasts"
+        ],
+        "notes": [
+            "Squirt with purpose!"
+        ]
+
+    }, 
+    {
+        "id": 5,
+        "title": "Peach Jasmine Syrup",
+        "flavors": ["Peach", "Jasmine", "Syrup"],
+        "image": "./assets/cocktail1.png",
+        "description": "Peach Jasmine Syrupy thingy",
+        "ingredients": [
+            "Peach",
+            "Jasmine"
+        ],
+        "instructions": [
+            "Add all ingredients to a squirty can.",
+            "Shake vigorously for 15-20 seconds.",
+            "chill for time.",
+            "SQUIRT."
+        ],
+        "pairings": [
+            "Chocolate desserts",
+            "Cheesecake",
+            "Breasts"
+        ],
+        "notes": [
+            "Squirt with purpose!"
+        ]
+
+    }
+
+]
