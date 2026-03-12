@@ -6,6 +6,7 @@ import './Style/App.css'
 import Home from "./Pages/Home"
 import Recipes from "./Pages/Recipes"
 import Courses from "./Pages/Courses"
+import ScrollToTop from "./Components/ScrollToTop"
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <Router>
 
         <Navbar />
+
+        <ScrollToTop />
 
         <Bubbles />
 

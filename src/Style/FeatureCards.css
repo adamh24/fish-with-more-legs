@@ -1,0 +1,148 @@
+/* ─── Section ─────────────────────────────────────────────────────────────── */
+
+.feature-cards-section {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    gap: 0;
+    padding: 0 2.5%;
+    padding-bottom: 5vh;
+    box-sizing: border-box;
+}
+
+/* ─── Card ────────────────────────────────────────────────────────────────── */
+
+.feature-card {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: flex-end;
+    margin: 0 8px;
+    transition: flex 0.4s ease, transform 0.3s ease;
+}
+
+a.feature-card:hover {
+    flex: 1.15;
+}
+
+a.feature-card:hover .feature-card-overlay {
+    background: linear-gradient(
+        to top,
+        rgba(6, 10, 7, 0.85) 0%,
+        rgba(6, 10, 7, 0.25) 50%,
+        rgba(6, 10, 7, 0.05) 100%
+    );
+}
+
+/* ─── Gradient Backgrounds ────────────────────────────────────────────────── */
+
+.feature-bg-recipes {
+    background: 
+        linear-gradient(160deg,
+            rgb(6, 43, 34) 0%,
+            rgb(12, 60, 44) 40%,
+            rgb(30, 80, 55) 100%
+        );
+}
+
+.feature-bg-courses {
+    background:
+        linear-gradient(160deg,
+            rgb(15, 30, 22) 0%,
+            rgb(24, 55, 40) 50%,
+            rgb(40, 75, 55) 100%
+        );
+}
+
+.feature-bg-season {
+    background:
+        linear-gradient(160deg,
+            rgb(30, 28, 20) 0%,
+            rgb(55, 50, 30) 50%,
+            rgb(80, 70, 40) 100%
+        );
+    cursor: default;
+}
+
+/* ─── Overlay ─────────────────────────────────────────────────────────────── */
+
+.feature-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(6, 10, 7, 0.8) 0%,
+        rgba(6, 10, 7, 0.15) 55%,
+        rgba(6, 10, 7, 0.0) 100%
+    );
+    transition: background 0.3s ease;
+    z-index: 1;
+}
+
+/* ─── Card Body ───────────────────────────────────────────────────────────── */
+
+.feature-card-body {
+    position: relative;
+    z-index: 2;
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+}
+
+.feature-card-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: rgb(82, 183, 136);
+    border: 1px solid rgba(82, 183, 136, 0.4);
+    padding: 3px 10px;
+    display: inline-block;
+    align-self: flex-start;
+    transition: background 0.2s ease;
+}
+
+a.feature-card:hover .feature-card-label {
+    background: rgba(82, 183, 136, 0.12);
+}
+
+.feature-bg-season .feature-card-label {
+    color: rgb(245, 172, 114);
+    border-color: rgba(245, 172, 114, 0.4);
+}
+
+.feature-card-title {
+    font-family: 'Antonio', sans-serif;
+    font-size: 2.4rem;
+    color: rgb(184, 228, 204);
+    margin: 0;
+    line-height: 1.05;
+    transition: color 0.2s ease;
+}
+
+a.feature-card:hover .feature-card-title {
+    color: rgb(255, 255, 255);
+}
+
+.feature-card-tagline {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.78rem;
+    color: rgba(184, 228, 204, 0.55);
+    margin: 0;
+    line-height: 1.5;
+    transition: color 0.2s ease;
+}
+
+a.feature-card:hover .feature-card-tagline {
+    color: rgba(184, 228, 204, 0.85);
+}
+
+/* ─── When you have a real image, add it as backgroundImage inline and the    */
+/* overlay + text will sit on top automatically.                                */
+/* e.g. style={{ backgroundImage: `url(${img})`, backgroundSize: 'cover',     */
+/*               backgroundPosition: 'center' }}                                */
