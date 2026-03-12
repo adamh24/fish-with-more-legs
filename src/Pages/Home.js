@@ -1,4 +1,5 @@
 import Hero from '../Components/Hero';
+import FeatureCards from '../Components/FeatureCards';
 import '../Style/Home.css';
 
 function Home() {
@@ -31,6 +32,8 @@ function Home() {
             ))}
           </div>
         </div>
+
+        <FeatureCards />
 
     </div>
   )
