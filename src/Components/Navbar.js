@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import '../Style/Navbar.css'
 
 function Navbar() {
@@ -22,7 +23,7 @@ function Navbar() {
   return (
     <nav>
         <div className='tab'>Courses</div>
-        <div className='tab'>Recipes</div>
+        <Link className='tab' to='/recipes'>Recipes</Link>
         <div className="title">Fish With Legs</div>
         <div className='tab'>About</div>
         <div className='tab'>Contact</div>
