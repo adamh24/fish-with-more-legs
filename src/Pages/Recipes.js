@@ -71,8 +71,7 @@ function CocktailDetail({ cocktail, onClose }) {
         )}
 
       </div>
-    </div>,
-    document.body
+    </div>
   );
 }
 

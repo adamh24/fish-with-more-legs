@@ -20,22 +20,27 @@
 .feature-pre-title {
     font-family: antonio, sans-serif;
     font-size: 3rem;
-    color: rgb(184, 228, 204);
-    /* margin-bottom: 5px; */
+    color: rgb(192, 240, 213);
+    display: block;
+    text-align: center;
 }
 
 .feature-title {
-    font-family: antonio, sans-serif;
-    font-size: 4rem;
+    font-family: rouge script, cursive;
+    font-size: 6rem;
     color: rgb(82, 183, 136);
     margin-bottom: 20px;
+    display: block;
+    text-align: center;
 }
 
 .feature-intro {
     font-family: 'DM Mono', monospace;
-    font-size: 1.2rem;
-    color: #ffffff;
+    font-size: 1rem;
+    color: rgb(192, 240, 213);
     line-height: 1.6;
+    display: block;
+    text-align: center;
 }
 
 .hero-image {
