@@ -7,6 +7,8 @@ function Home() {
         
         <Hero />
 
+        <FastTravel />
+
     </div>
   )
 }
