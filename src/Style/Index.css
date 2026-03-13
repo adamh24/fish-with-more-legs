@@ -11,9 +11,11 @@ body {
     text-decoration: none;
     border-bottom: 2px solid rgb(82, 183, 136);
     padding-bottom: 15px;
-    padding-left: 200px;
-    padding-right: 200px;
+    /* padding-left: 200px;
+    padding-right: 200px; */
     display: inline-block;
+    width: 40%;
+    text-align: center;
 }
 
 .tab {

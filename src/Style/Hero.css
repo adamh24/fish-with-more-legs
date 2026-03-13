@@ -30,7 +30,7 @@
     font-family: rouge script, cursive;
     font-size: 6rem;
     color: rgb(82, 183, 136);
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     display: block;
     text-align: center;
 }
@@ -43,6 +43,7 @@
     display: block;
     max-width: 90%;
     text-align: center;
+    padding-bottom: 7px;
 }
 
 .hero-image {
@@ -59,4 +60,42 @@
     width: 100%;
     height: auto;
     display: block;
+}
+
+@media (max-width: 900px) {
+
+    .hero-container {
+        flex-direction: column;
+       }
+
+    .hero-textbox {
+        padding: 0 20px;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+
+    .hero-image {
+        padding: 0%;
+        padding-inline: 5%;
+    }
+}
+
+@media (max-width: 452px) {
+
+    .feature-pre-title {
+        font-size: 2rem;
+    }
+
+    .feature-title {
+        font-size: 4rem;
+    }
+
+    .feature-intro {
+        font-size: 0.9rem;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        max-height: none;
+    }
 }
