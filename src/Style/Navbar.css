@@ -17,3 +17,33 @@ nav {
   z-index: 100;
 }
 
+@media (max-width: 700px) {
+  nav {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 470px) {
+    nav {
+        flex-direction: column;
+    }
+
+    /* .nav-tabs {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    } */
+
+    .title {
+        order: -1; /* title sits at top */
+        width: 100%;
+        text-align: center;
+    }
+
+    .tab {
+        order: 1; /* tabs sit below */
+        display: inline;
+    }
+}

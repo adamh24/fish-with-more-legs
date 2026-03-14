@@ -31,3 +31,16 @@ body {
 .tab:hover {
     color: rgb(69, 77, 75);
 }
+
+@media (max-width: 700px) {
+  .title {
+    font-size: 2rem;
+    width: 50%;
+  }
+
+  .tab {
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+}
+

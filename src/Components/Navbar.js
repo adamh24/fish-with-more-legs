@@ -23,10 +23,12 @@ function Navbar() {
   return (
     <nav>
         <Link className='tab' to='/courses'>Courses</Link>
+        {/* <div className='nav-tabs'> */}
         <Link className='tab' to='/recipes'>Recipes</Link>
         <Link className="title" to='/'>Fish With Legs</Link>
         <div className='tab'>About</div>
         <div className='tab'>Contact</div>
+        {/* </div> */}
         
     </nav>
   )
