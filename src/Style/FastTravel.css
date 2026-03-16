@@ -5,9 +5,9 @@
     align-items: center;          /* horizontal center */
     text-align: center;
     width: 200px;
-    height: 60px;                 /* a bit taller to fit top-aligned text */
+    height: 40px;                 /* reduced height for thinner box */
     margin: 10px auto 0;
-    padding: 10px;
+    padding: 8px;                 /* reduced padding */
     border: 2px solid rgba(82, 183, 136, 0.2);
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
@@ -26,6 +26,7 @@
     box-shadow:
       0 0 8px rgba(82, 183, 136, 0.25),
       0 0 14px rgba(82, 183, 136, 0.16);
+    text-shadow: 0 0 8px rgba(82, 183, 136, 0.5);
 }
 
 .fast-travel-container::after {

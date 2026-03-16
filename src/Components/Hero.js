@@ -1,5 +1,6 @@
 import '../Style/Hero.css';
 import FastTravel from '../Components/FastTravel';
+import Logo from '../Assets/Logo.jpg';
 
 function Hero() {
   return (
@@ -14,7 +15,7 @@ function Hero() {
         </div>
 
         <div className="hero-image">
-            <img src='' alt="Hero Image" />
+            <img src={Logo} alt="Fish With Legs Logo" />
         </div>
 
     </div>
