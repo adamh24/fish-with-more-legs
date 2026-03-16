@@ -245,8 +245,6 @@
     border-bottom: 1px solid rgba(82, 183, 136, 0.14);
     flex-shrink: 0;
     padding: 0 40px;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 .course-detail-tab {
@@ -270,6 +268,18 @@
 .course-detail-tab.active {
     color: rgb(82, 183, 136);
     border-bottom-color: rgb(82, 183, 136);
+}
+
+@media (max-width: 640px) {
+    .course-detail-tabs {
+        display: flex;
+        justify-content: center;
+    }
+
+    .course-detail-tab {
+        padding: 14px 12px;
+        font-size: 0.78rem;
+    }
 }
 
 /* ─── Detail Body / Scrollable Content ───────────────────────────────────── */
