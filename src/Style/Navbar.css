@@ -64,9 +64,15 @@ nav {
 
 @media (max-width: 470px) {
 
-    nav {
-       display: flex;
-       flex-wrap: wrap;
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 8, 5, 1) 75%,
+      rgba(10, 8, 5, 0) 100%
+  );
+
     }
 
     .title {
