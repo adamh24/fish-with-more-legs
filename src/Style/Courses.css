@@ -246,6 +246,7 @@
     flex-shrink: 0;
     padding: 0 40px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .course-detail-tab {
