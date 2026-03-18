@@ -37,41 +37,43 @@ function CocktailDetail({ cocktail, onClose }) {
           </div>
         )}
 
-        {cocktail.ingredients && (
-          <div className="detail-section">
-            <h3>Ingredients</h3>
-            <ul>
-              {cocktail.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
-            </ul>
-          </div>
-        )}
+        <div className="detail-body">
+          {cocktail.ingredients && (
+            <div className="detail-section">
+              <h3>Ingredients</h3>
+              <ul>
+                {cocktail.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
+              </ul>
+            </div>
+          )}
 
-        {cocktail.instructions && (
-          <div className="detail-section">
-            <h3>Instructions</h3>
-            <ol>
-              {cocktail.instructions.map((step, i) => <li key={i}>{step}</li>)}
-            </ol>
-          </div>
-        )}
+          {cocktail.instructions && (
+            <div className="detail-section">
+              <h3>Instructions</h3>
+              <ol>
+                {cocktail.instructions.map((step, i) => <li key={i}>{step}</li>)}
+              </ol>
+            </div>
+          )}
 
-        {cocktail.pairings && (
-          <div className="detail-section">
-            <h3>Pairings</h3>
-            <ul>
-              {cocktail.pairings.map((p, i) => <li key={i}>{p}</li>)}
-            </ul>
-          </div>
-        )}
+          {cocktail.pairings && (
+            <div className="detail-section">
+              <h3>Pairings</h3>
+              <ul>
+                {cocktail.pairings.map((p, i) => <li key={i}>{p}</li>)}
+              </ul>
+            </div>
+          )}
 
-        {cocktail.notes && (
-          <div className="detail-section">
-            <h3>Notes</h3>
-            <ul>
-              {cocktail.notes.map((n, i) => <li key={i}>{n}</li>)}
-            </ul>
-          </div>
-        )}
+          {cocktail.notes && (
+            <div className="detail-section">
+              <h3>Notes</h3>
+              <ul>
+                {cocktail.notes.map((n, i) => <li key={i}>{n}</li>)}
+              </ul>
+            </div>
+          )}
+        </div>
 
       </div>
     </div>,

@@ -203,17 +203,37 @@
 }
 
 .detail-panel {
+    display: flex;
+    flex-direction: column;
     width: 480px;
     max-width: 100%;
-    max-height: calc(100vh - 48px);
-    height: auto;
-    overflow-y: auto;
+    height: 100vh;
     background: rgb(9, 15, 11);
     border-left: 1px solid rgba(82, 183, 136, 0.25);
-    padding: 56px 40px 90px;
+    padding: 56px 40px 0px;
     box-sizing: border-box;
     animation: slideIn 0.3s ease;
     position: relative;
+}
+
+.detail-body {
+    overflow-y: auto;
+    padding-right: 10px;
+    flex: 1;
+}
+
+
+.detail-body {
+    overflow-y: auto;
+    padding-right: 10px;
+    flex: 1;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+.detail-body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
 }
 
 @keyframes slideIn {
