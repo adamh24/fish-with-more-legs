@@ -26,7 +26,7 @@ function Navbar() {
         <Link className='tab' to='/courses'>Courses</Link>
         <Link className='tab' to='/recipes'>Recipes</Link>
         <Link className="title" to='/'>Fish With Legs</Link>
-        <div className='tab'>About</div>
+        <Link className='tab' to='/about'>About</Link>
         <div className='tab'>Contact</div>
         
     </nav>

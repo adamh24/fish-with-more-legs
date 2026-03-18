@@ -7,6 +7,7 @@ import Home from "./Pages/Home"
 import Recipes from "./Pages/Recipes"
 import Courses from "./Pages/Courses"
 import ScrollToTop from "./Components/ScrollToTop"
+import About from './Pages/About';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/courses" element={<Courses />} />
+          <Route path="/about" element={<About />} />
         
         </Routes>
 

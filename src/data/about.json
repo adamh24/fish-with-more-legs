@@ -1,0 +1,26 @@
+{
+  "team": [
+    {
+      "name": "Adam Hannay",
+      "role": "Founder",
+      "bio": "Adam has spent the better part of a decade with his hands on a jigger, his eyes on the guest, and his mind on what makes a great drink truly great. A working bartender, certified spirits educator, and hospitality trainer, Adam built Fish With Legs as a place where the craft could breathe — somewhere between the recipe and the philosophy, the technique and the instinct.",
+      "avatar": "adam-hannay.png"
+    },
+    {
+      "name": "Mrs Whistledown",
+      "role": "Head of Education",
+      "bio": "A certified sommelier and spirits educator, Mrs Whistledown designs the training programmes that sit at the heart of what we do — blending technical precision with real-world bar craft."
+    },
+    {
+      "name": "Totoro",
+      "role": "Recipe Developer",
+      "bio": "Totoro brings a chef's sensibility to cocktail creation. His seasonal menus draw on foraged ingredients, fermentation, and a relentless curiosity for flavour."
+    }
+  ],
+
+  "values": [
+    { "label": "Craft", "desc": "Every recipe, technique, and course is built with care and intention." },
+    { "label": "Development", "desc": "From your first pour to running your own bar programme, we're here to support every stage of your professional journey." },
+    { "label": "Community", "desc": "From home enthusiasts to working bartenders — everyone belongs behind this bar." }
+  ]
+}
