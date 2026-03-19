@@ -132,7 +132,6 @@
 
 .card-image {
     position: relative;
-    height: 190px;
     overflow: hidden;
     background: rgb(10, 17, 13);
 }
@@ -483,12 +482,20 @@
     margin: 12px 0 8px 0;
 }
 
+.detail-section-2block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 .modifier-image {
     position: relative;
-    height: 190px;
+    max-height: 30vh;
+    max-width: 50vw;
     overflow: hidden;
-    background: rgb(10, 17, 13);
+    padding-right: 80px;
 }
+
 
 /* ─── Menus Section ───────────────────────────────────────────────────────── */
 

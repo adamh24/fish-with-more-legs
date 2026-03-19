@@ -218,6 +218,7 @@ function ModifierCard({ modifier }) {
 
             {modifier.ingredients && (
               <div className="detail-section">
+              <div className="detail-section-2block">
                 <img className="modifier-image" 
                     src={getModifierImage(modifier.image)}
                     alt={modifier.image ? modifier.title : 'Modifier'}
@@ -228,6 +229,7 @@ function ModifierCard({ modifier }) {
                     {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
                   </ul>
                 </div>
+              </div>
               </div>
             )}
 
