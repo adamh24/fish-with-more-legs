@@ -5,6 +5,7 @@ import modifiersData from '../data/modifiers.json';
 import '../Style/Recipes.css';
 
 const imageContext = require.context('../Assets', false, /\.(png|jpe?g|svg)$/);
+
 const cocktailImg = (() => {
   try {
     return imageContext('./cocktail.png');
@@ -19,6 +20,22 @@ const getCocktailImage = (filename) => {
     return imageContext(`./${filename}`);
   } catch {
     return cocktailImg;
+  }}
+
+  const modifierImg = (() => {
+  try {
+    return imageContext('./modifier.png');
+  } catch {
+    return null;
+  }
+})();
+
+const getModifierImage = (filename) => {
+  if (!filename) return modifierImg;
+  try {
+    return imageContext(`./${filename}`);
+  } catch {
+    return modifierImg;
   }
 };
 
