@@ -1,5 +1,5 @@
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
-
+import { useState } from 'react';
 import Navbar from "./Components/Navbar"
 import Bubbles from "./Components/Bubbles"
 import './Style/App.css'
@@ -8,15 +8,28 @@ import Recipes from "./Pages/Recipes"
 import Courses from "./Pages/Courses"
 import ScrollToTop from "./Components/ScrollToTop"
 import About from './Pages/About';
+import ContactOverlay from './Components/ContactOverlay';
 
 function App() {
+  const [showContact, setShowContact] = useState(false);
+  const [closingContact, setClosingContact] = useState(false);
+
+    const handleCloseContact = () => {
+    setClosingContact(true);
+    setTimeout(() => {
+      setShowContact(false);
+      setClosingContact(false);
+    }, 300);
+  };
+
+
   return (
   
     <div className="main-container">
 
       <Router>
 
-        <Navbar />
+        <Navbar onOpenContact={() => setShowContact(true)}/>
 
         <ScrollToTop />
 
@@ -30,6 +43,10 @@ function App() {
           <Route path="/about" element={<About />} />
         
         </Routes>
+
+        {showContact && (
+          <ContactOverlay onClose={handleCloseContact} closing={closingContact} />
+        )}
 
       </Router>
     
