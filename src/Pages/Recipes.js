@@ -4,9 +4,44 @@ import cocktailsData from '../data/cocktails.json';
 import modifiersData from '../data/modifiers.json';
 import '../Style/Recipes.css';
 
+const imageContext = require.context('../Assets', false, /\.(png|jpe?g|svg)$/);
+
+const cocktailImg = (() => {
+  try {
+    return imageContext('./cocktail.png');
+  } catch {
+    return null;
+  }
+})();
+
+const getCocktailImage = (filename) => {
+  if (!filename) return cocktailImg;
+  try {
+    return imageContext(`./${filename}`);
+  } catch {
+    return cocktailImg;
+  }}
+
+  const modifierImg = (() => {
+  try {
+    return imageContext('./modifier.png');
+  } catch {
+    return null;
+  }
+})();
+
+const getModifierImage = (filename) => {
+  if (!filename) return modifierImg;
+  try {
+    return imageContext(`./${filename}`);
+  } catch {
+    return modifierImg;
+  }
+};
+
 // ─── Cocktail Detail Panel ────────────────────────────────────────────────────
 
-function CocktailDetail({ cocktail, onClose }) {
+function CocktailDetail({ cocktail, onClose, closing }) {
   if (!cocktail) return null;
 
   const portalContainer = typeof document !== 'undefined' ? document.body : null;
@@ -14,12 +49,12 @@ function CocktailDetail({ cocktail, onClose }) {
 
   return ReactDOM.createPortal(
     <div className="detail-overlay" onClick={onClose}>
-      <div className="detail-panel" onClick={e => e.stopPropagation()}>
+      <div className={`detail-panel ${closing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
 
         <button className="detail-close" onClick={onClose}>✕</button>
 
         <div className="detail-meta">
-          <span className="menu-badge">{cocktail.menu}</span>
+          <span className="menu-badge">{Array.isArray(cocktail.menu) ? cocktail.menu.join(' · ') : cocktail.menu}</span>
           {cocktail.featured && <span className="featured-badge">Featured</span>}
         </div>
 
@@ -47,12 +82,35 @@ function CocktailDetail({ cocktail, onClose }) {
             </div>
           )}
 
-          {cocktail.instructions && (
+          {(cocktail.method || cocktail.glass || cocktail.ice || cocktail.garnish) && (
             <div className="detail-section">
               <h3>Instructions</h3>
-              <ol>
-                {cocktail.instructions.map((step, i) => <li key={i}>{step}</li>)}
-              </ol>
+              <div className="detail-instructions">
+                {cocktail.method && (
+                  <div className="instruction-row">
+                    <ol>Method:</ol>
+                    <ul>{cocktail.method}</ul>
+                  </div>
+                )}
+                {cocktail.glass && (
+                  <div className="instruction-row">
+                    <ol>Glass:</ol>
+                    <ul>{cocktail.glass}</ul>
+                  </div>
+                )}
+                {cocktail.ice && (
+                  <div className="instruction-row">
+                    <ol>Ice:</ol>
+                    <ul>{cocktail.ice}</ul>
+                  </div>
+                )}
+                {cocktail.garnish && (
+                  <div className="instruction-row">
+                    <ol>Garnish:</ol>
+                    <ul>{cocktail.garnish}</ul>
+                  </div>
+                )}
+              </div>
             </div>
           )}
 
@@ -87,11 +145,15 @@ function CocktailCard({ cocktail, onClick }) {
   return (
     <div className="cocktail-card" onClick={() => onClick(cocktail)}>
       <div className="card-image">
-        <img src={cocktail.image} alt={cocktail.title} />
+        <img
+          src={getCocktailImage(cocktail.image)}
+          alt={cocktail.image ? cocktail.title : 'Cocktail'}
+          style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+        />
         {cocktail.featured && <span className="featured-badge">Featured</span>}
       </div>
       <div className="card-body">
-        <span className="menu-badge">{cocktail.menu}</span>
+        <span className="menu-badge">{Array.isArray(cocktail.menu) ? cocktail.menu.join(' · ') : cocktail.menu}</span>
         <h3 className="card-title">{cocktail.title}</h3>
         {cocktail.description && (
           <p className="card-description">{cocktail.description}</p>
@@ -110,71 +172,102 @@ function CocktailCard({ cocktail, onClick }) {
 
 function ModifierCard({ modifier }) {
   const [expanded, setExpanded] = useState(false);
+  const [closing, setClosing] = useState(false);
+
+  const handleClose = () => {
+  setClosing(true);
+  setTimeout(() => {
+    setExpanded(false);
+    setClosing(false);
+  }, 300);
+  };
+
+  const portalContainer = typeof document !== 'undefined' ? document.body : null;
 
   return (
-    <div
-      className={`modifier-card ${expanded ? 'expanded' : ''}`}
-      onClick={() => setExpanded(!expanded)}
-    >
-      <div className="modifier-header">
-        {modifier.catagory && (
-          <span className="category-badge">{modifier.catagory}</span>
-        )}
-        <h3 className="card-title">{modifier.title}</h3>
-        {modifier.breif && (
-          <p className="modifier-brief">{modifier.breif}</p>
-        )}
-        <span className="modifier-expand-hint">
-          {expanded ? 'collapse ↑' : 'expand ↓'}
-        </span>
-      </div>
-
-      {expanded && (
-        <div className="modifier-detail">
-          {modifier.description && (
-            <p className="detail-description">{modifier.description}</p>
+    <>
+      <div
+        className={`modifier-card ${expanded ? 'active' : ''}`}
+        onClick={() => setExpanded(true)}
+      >
+        <div className="modifier-header">
+          {modifier.catagory && (
+            <span className="category-badge">{modifier.catagory}</span>
           )}
-
-          {modifier.ingredients && (
-            <div className="detail-section">
-              <h4>Ingredients</h4>
-              <ul>
-                {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
-              </ul>
-            </div>
-          )}
-
-          {modifier.instructions && (
-            <div className="detail-section">
-              <h4>Instructions</h4>
-              <ol>
-                {modifier.instructions.map((step, i) => <li key={i}>{step}</li>)}
-              </ol>
-            </div>
-          )}
-
-          {modifier.notes && (
-            <div className="detail-section">
-              <h4>Notes</h4>
-              <ul>
-                {modifier.notes.map((n, i) => <li key={i}>{n}</li>)}
-              </ul>
-            </div>
+          <h3 className="card-title">{modifier.title}</h3>
+          {modifier.breif && (
+            <p className="modifier-brief">{modifier.breif}</p>
           )}
         </div>
+      </div>
+
+      {expanded && portalContainer && ReactDOM.createPortal(
+        <div className="modifier-overlay" onClick={() => setExpanded(false)}>
+          <div className={`modifier-drawer ${closing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
+            <button className="modifier-close" onClick={handleClose}>✕</button>
+
+            {modifier.catagory && (
+              <span className="category-badge">{modifier.catagory}</span>
+            )}
+            <h3 className="modifier-drawer-title">{modifier.title}</h3>
+
+            {modifier.description && (
+              <p className="detail-description">{modifier.description}</p>
+            )}
+
+            {modifier.ingredients && (
+              <div className="detail-section">
+              <div className="detail-section-2block">
+                <img className="modifier-image" 
+                    src={getModifierImage(modifier.image)}
+                    alt={modifier.image ? modifier.title : 'Modifier'}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                <div> 
+                  <h4>Ingredients</h4>
+                  <ul>
+                    {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
+                  </ul>
+                </div>
+              </div>
+              </div>
+            )}
+
+            {modifier.instructions && (
+              <div className="detail-section">
+                <h4>Instructions</h4>
+                <ol className="modifier-instructions">
+                  {modifier.instructions.map((step, i) => <li key={i}>{step}</li>)}
+                </ol>
+              </div>
+            )}
+
+            {modifier.notes && (
+              <div className="detail-section">
+                <h4>Notes</h4>
+                <ul>
+                  {modifier.notes.map((n, i) => <li key={i}>{n}</li>)}
+                </ul>
+              </div>
+            )}
+          </div>
+        </div>,
+        portalContainer
       )}
-    </div>
+    </>
   );
 }
 
 // ─── Menus Section ────────────────────────────────────────────────────────────
 
 function MenusSection({ onCocktailClick }) {
-  const menus = [...new Set(cocktailsData.map(c => c.menu))];
+  const menus = [...new Set(cocktailsData.flatMap(c =>
+  Array.isArray(c.menu) ? c.menu : [c.menu]
+  ))];
   const [activeMenu, setActiveMenu] = useState(menus[0]);
 
-  const menuCocktails = cocktailsData.filter(c => c.menu === activeMenu);
-
+  const menuCocktails = cocktailsData.filter(c =>
+    Array.isArray(c.menu) ? c.menu.includes(activeMenu) : c.menu === activeMenu
+  );
   return (
     <div className="menus-container">
 
@@ -224,6 +317,15 @@ function MenusSection({ onCocktailClick }) {
 function Recipes() {
   const [activeSection, setActiveSection] = useState('cocktails');
   const [selectedCocktail, setSelectedCocktail] = useState(null);
+  const [closingDetail, setClosingDetail] = useState(false);
+
+const handleCloseDetail = () => {
+  setClosingDetail(true);
+  setTimeout(() => {
+    setSelectedCocktail(null);
+    setClosingDetail(false);
+  }, 300);
+};
 
   const sections = ['cocktails', 'ingredients', 'menus'];
 
@@ -280,7 +382,8 @@ function Recipes() {
 
       <CocktailDetail
         cocktail={selectedCocktail}
-        onClose={() => setSelectedCocktail(null)}
+        onClose={handleCloseDetail}
+        closing={closingDetail}
       />
 
     </div>

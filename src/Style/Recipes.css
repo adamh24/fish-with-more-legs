@@ -132,7 +132,6 @@
 
 .card-image {
     position: relative;
-    height: 190px;
     overflow: hidden;
     background: rgb(10, 17, 13);
 }
@@ -214,6 +213,15 @@
     box-sizing: border-box;
     animation: slideIn 0.3s ease;
     position: relative;
+}
+
+.detail-panel.closing {
+    animation: slideOut 0.3s ease forwards;
+}
+
+@keyframes slideOut {
+    from { transform: translateX(0); }
+    to   { transform: translateX(100%); }
 }
 
 .detail-body {
@@ -307,8 +315,18 @@
     letter-spacing: 0.12em;
 }
 
-.detail-section ul,
 .detail-section ol {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: underline;
+    color: rgb(132 162 149);
+    padding-left: 20px;
+    line-height: 2;
+    margin: 0;
+}
+
+.detail-section ul {
     font-family: 'DM Mono', monospace;
     font-size: 0.84rem;
     color: rgb(101, 119, 111);
@@ -319,6 +337,12 @@
 
 .detail-section li {
     margin-bottom: 2px;
+}
+
+.detail-instructions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 12px;
 }
 
 /* ─── Modifiers / Ingredients Grid ───────────────────────────────────────── */
@@ -371,19 +395,101 @@
     font-style: italic;
 }
 
-.modifier-expand-hint {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: rgba(82, 183, 136, 0.5);
-    letter-spacing: 0.06em;
-    margin-top: 4px;
-}
-
 .modifier-detail {
     margin-top: 18px;
     border-top: 1px solid rgba(82, 183, 136, 0.1);
     padding-top: 16px;
     animation: fadeUp 0.2s ease;
+}
+
+/* ─── Modifier Drawer Overlay ─────────────────────────────────────────────── */
+
+.modifier-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(6, 10, 7, 0.75);
+    z-index: 200;
+    display: flex;
+    align-items: flex-end;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.modifier-drawer {
+    width: 100%;
+    max-height: 100vh;
+    background: rgb(9, 15, 11);
+    border-top: 1px solid rgba(82, 183, 136, 0.25);
+    padding: 40px 6% 48px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    animation: slideUp 0.3s ease;
+    position: relative;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.modifier-drawer.closing {
+    animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(0); }
+    to   { transform: translateY(100%); }
+}
+
+.modifier-drawer::-webkit-scrollbar {
+    display: none;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+}
+
+.modifier-close {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    background: none;
+    border: 1px solid rgba(101, 119, 111, 0.4);
+    color: rgb(101, 119, 111);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'DM Mono', monospace;
+    padding: 4px 10px;
+    line-height: 1;
+}
+
+.modifier-close:hover {
+    color: rgb(184, 228, 204);
+    border-color: rgb(184, 228, 204);
+}
+
+.modifier-drawer-title {
+    font-family: 'Antonio', sans-serif;
+    font-size: 2.2rem;
+    color: rgb(82, 183, 136);
+    margin: 12px 0 8px 0;
+}
+
+.detail-section-2block {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modifier-image {
+    position: relative;
+    max-height: 30vh;
+    max-width: 50vw;
+    overflow: hidden;
+    padding-right: 80px;
+}
+
+.modifier-instructions {
+    text-decoration: none !important; 
 }
 
 /* ─── Menus Section ───────────────────────────────────────────────────────── */
