@@ -198,7 +198,6 @@ function ModifierCard({ modifier }) {
           {modifier.breif && (
             <p className="modifier-brief">{modifier.breif}</p>
           )}
-          <span className="modifier-expand-hint">expand ↑</span>
         </div>
       </div>
 
@@ -222,7 +221,7 @@ function ModifierCard({ modifier }) {
                 <img className="modifier-image" 
                     src={getModifierImage(modifier.image)}
                     alt={modifier.image ? modifier.title : 'Modifier'}
-                    style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 <div> 
                   <h4>Ingredients</h4>
                   <ul>
@@ -236,7 +235,7 @@ function ModifierCard({ modifier }) {
             {modifier.instructions && (
               <div className="detail-section">
                 <h4>Instructions</h4>
-                <ol>
+                <ol className="modifier-instructions">
                   {modifier.instructions.map((step, i) => <li key={i}>{step}</li>)}
                 </ol>
               </div>

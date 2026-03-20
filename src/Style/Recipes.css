@@ -395,14 +395,6 @@
     font-style: italic;
 }
 
-.modifier-expand-hint {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.72rem;
-    color: rgba(82, 183, 136, 0.5);
-    letter-spacing: 0.06em;
-    margin-top: 4px;
-}
-
 .modifier-detail {
     margin-top: 18px;
     border-top: 1px solid rgba(82, 183, 136, 0.1);
@@ -496,6 +488,9 @@
     padding-right: 80px;
 }
 
+.modifier-instructions {
+    text-decoration: none !important; 
+}
 
 /* ─── Menus Section ───────────────────────────────────────────────────────── */
 
