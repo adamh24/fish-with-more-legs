@@ -185,6 +185,10 @@
     border-color: rgb(82, 183, 136);
 }
 
+.contact-info-set {
+    display: flex;
+}
+
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 
 @media (max-width: 520px) {

@@ -35,20 +35,26 @@ function ContactOverlay({ onClose, closing }) {
 
           <a className="contact-row" href="mailto:adam.hannay@fishwithlegs.co.uk">
             <span className="contact-label">Email</span>
-            <span className="contact-value">adam.hannay@fishwithlegs.co.uk</span>
-            <CopyButton text="adam.hannay@fishwithlegs.co.uk" />
+            <div className="contact-info-set">
+              <span className="contact-value">adam.hannay@fishwithlegs.co.uk</span>
+              <CopyButton text="adam.hannay@fishwithlegs.co.uk" />
+            </div>
           </a>
 
           <a className="contact-row" href="tel:00000 000000">
             <span className="contact-label">Phone</span>
-            <span className="contact-value">00000 000000</span>
-            <CopyButton text="00000 000000" />
+            <div className="contact-info-set">
+              <span className="contact-value">00000 000000</span>
+              <CopyButton text="00000 000000" />
+            </div>
           </a>
 
           <a className="contact-row" href="https://instagram.com/fishwithlegs" target="_blank" rel="noreferrer">
             <span className="contact-label">Instagram</span>
-            <span className="contact-value">@fishwithlegs</span>
-            <CopyButton text="@fishwithlegs" />
+            <div className="contact-info-set">
+              <span className="contact-value">@fishwithlegs</span>
+              <CopyButton text="@fishwithlegs" />
+            </div>
           </a>
 
         </div>
