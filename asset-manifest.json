@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.272daacf.css",
-    "main.js": "/static/js/main.60ccf5e6.js",
+    "main.css": "/static/css/main.4a9fb2a1.css",
+    "main.js": "/static/js/main.bdd5b721.js",
     "static/js/453.03ff2a8f.chunk.js": "/static/js/453.03ff2a8f.chunk.js",
     "static/media/adam-hannay.png": "/static/media/adam-hannay.5e26472e1d03c4d12874.png",
+    "static/media/foam.jpg": "/static/media/foam.b0df63a26e4122cfd1c4.jpg",
     "static/media/Logo.jpg": "/static/media/Logo.00c67d6b1a03fecaa20b.jpg",
+    "static/media/cocktail.png": "/static/media/cocktail.064fc2d281dcea7323e1.png",
     "static/media/leprechaun.png": "/static/media/leprechaun.62c1fa468a7cb2558cc1.png",
+    "static/media/modifier.png": "/static/media/modifier.a735c5a6c643cea8deb6.png",
     "index.html": "/index.html",
-    "main.272daacf.css.map": "/static/css/main.272daacf.css.map",
-    "main.60ccf5e6.js.map": "/static/js/main.60ccf5e6.js.map",
+    "main.4a9fb2a1.css.map": "/static/css/main.4a9fb2a1.css.map",
+    "main.bdd5b721.js.map": "/static/js/main.bdd5b721.js.map",
     "453.03ff2a8f.chunk.js.map": "/static/js/453.03ff2a8f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.272daacf.css",
-    "static/js/main.60ccf5e6.js"
+    "static/css/main.4a9fb2a1.css",
+    "static/js/main.bdd5b721.js"
   ]
 }
