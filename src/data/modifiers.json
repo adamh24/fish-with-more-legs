@@ -2,27 +2,26 @@
     {
         "id": 1,
         "catagory": "Foams",
-        "title": "Chocolate Raspberry Foam",
-        "breif": "Bitter-sweet topping for the pastel girlies",
+        "title": "Chocolate Raspberry Whipped Cream",
+        "breif": "Sweet treat for the pastel girlies",
         "image": "foam.jpg",
-        "description": "Fresh raspberry and cocoa creamy cocktail foam. Inspired by a chocolate selection from Hotel Chocolat, this bitter sweet topping was created to accompany a pistatio washed bourbon, with its dark bottle green colour and the foam's rose tint. It's the perfect treat for the pastel girlies",
+        "description": "Fresh raspberry and chocolate creamy cocktail foam. Inspired by a chocolate selection from Hotel Chocolat, this velvet topping was created to accompany a pistatio-cream washed bourbon, the foam's rose tint since beautifuly upon the bottle green liqueur. It's the perfect treat for the pastel girlies",
         "ingredients": [
-            "Cocoa Bitter / Hot Chocolate Powder",
-            "Fresh Raspberries",
-            "Vegan Cream"
+            "100g Hot Chocolate Powder",
+            "200g Frozen Raspberries",
+            "200ml Whipping Cream"
         ],
 
         "instructions": [
-            "Add all ingredients to a cream whipper.",
-            "Seel and charge with 2 NO2 charges",
-            "Shake vigorously for 10 seconds.",
-            "Chill in a freezer for 10 minutes.",
-            "Shake again for another 10 seconds",
-            "SQUIRT WITH PURPOSE!"
+            "Crush/blend the frozen raspberries and strain to extract the juice.",
+            "Boil the hot chocolate powder with 100ml of water to create a hot chocolate syrup, and let it cool.",
+            "Add the raspberry juice, the hot chocolate syrup and the whipping cream to a bowl and mix gently to incorperate the ingredients.",
+            "Once the mixture is well combined, mix aggresively by hand or with a mixer until the mixture starts to thicken and form soft peaks.",
+            "Apply the whipped cream to your cocktail or dessert and enjoy!"
         ],
 
         "notes": [
-            "If you do not own a cream whipper, the ingredients can be hand or machine whipped"
+            "If you own a cream whipper, the ingredients can be added to the canister after step 3and charged with a cream whipper cartridge (NO2)."
         ]
 
     },

@@ -167,22 +167,24 @@
 }
 
 .copy-btn {
-    font-family: 'DM Mono', monospace;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: rgb(82, 183, 136);
     background: none;
-    border: 1px solid rgba(82, 183, 136, 0.3);
-    padding: 3px 8px;
+    border: none;
+    padding: 0px 35px;
     cursor: pointer;
     transition: all 0.2s ease;
-    white-space: nowrap;
 }
 
-.copy-btn:hover {
-    background: rgba(82, 183, 136, 0.1);
-    border-color: rgb(82, 183, 136);
+.copy-btn img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 6px rgba(82, 183, 136, 0.8));
+    transition: all 0.2s ease;
 }
 
 .contact-info-set {
