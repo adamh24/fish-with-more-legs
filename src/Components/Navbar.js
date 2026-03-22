@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import '../Style/Navbar.css'
 
-function Navbar() {
+function Navbar ({ onOpenContact }) {
 
   useEffect(() => {
     const nav = document.querySelector('nav')
@@ -27,7 +27,7 @@ function Navbar() {
         <Link className='tab' to='/recipes'>Recipes</Link>
         <Link className="title" to='/'>Fish With Legs</Link>
         <Link className='tab' to='/about'>About</Link>
-        <div className='tab'>Contact</div>
+        <div className='tab' onClick={onOpenContact}>Contact</div>
         
     </nav>
   )
