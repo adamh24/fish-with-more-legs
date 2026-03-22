@@ -120,11 +120,6 @@
     flex-direction: column;
     gap: 4px;
     text-decoration: none;
-    transition: opacity 0.2s ease;
-}
-
-.contact-row:hover .contact-value {
-    color: rgb(184, 228, 204);
 }
 
 .contact-label {
@@ -140,6 +135,10 @@
     font-size: 1.4rem;
     color: rgba(184, 228, 204, 0.75);
     transition: color 0.2s ease;
+}
+
+.contact-value:hover {
+    color: rgb(191, 235, 211);
 }
 
 /* ─── Footer ──────────────────────────────────────────────────────────────── */

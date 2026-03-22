@@ -417,7 +417,7 @@
 
 .modifier-drawer {
     width: 100%;
-    max-height: 100vh;
+    max-height: 96vh;
     background: rgb(9, 15, 11);
     border-top: 1px solid rgba(82, 183, 136, 0.25);
     padding: 40px 6% 48px;
