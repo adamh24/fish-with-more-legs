@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import cocktailsData from '../data/cocktails.json';
 import modifiersData from '../data/modifiers.json';
@@ -42,6 +42,18 @@ const getModifierImage = (filename) => {
 // ─── Cocktail Detail Panel ────────────────────────────────────────────────────
 
 function CocktailDetail({ cocktail, onClose, closing }) {
+
+  useEffect(() => {
+    if (cocktail) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [cocktail]);
+
   if (!cocktail) return null;
 
   const portalContainer = typeof document !== 'undefined' ? document.body : null;
@@ -181,6 +193,17 @@ function ModifierCard({ modifier }) {
     setClosing(false);
   }, 300);
   };
+
+  useEffect(() => {
+  if (expanded) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+  return () => {
+    document.body.style.overflow = '';
+  };
+}, [expanded]);
 
   const portalContainer = typeof document !== 'undefined' ? document.body : null;
 
@@ -375,7 +398,6 @@ const handleCloseDetail = () => {
         <section className="section-content">
           <MenusSection onCocktailClick={cocktail => {
             setSelectedCocktail(cocktail);
-            setActiveSection('cocktails');
           }} />
         </section>
       )}
