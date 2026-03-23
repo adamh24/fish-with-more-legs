@@ -267,56 +267,61 @@ function ModifierCard({ modifier }) {
           <div className={`modifier-drawer ${closing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
             <button className="modifier-close" onClick={handleClose}>✕</button>
 
-            {modifier.category && (
-              <span className="category-badge" style={getCategoryStyle(modifier.category)}>
-                {modifier.category}
-              </span>
-            )}
-            <h4 className="modifier-drawer-title">{modifier.title}</h4>
+            <div className="modifier-drawer-header">
+              {modifier.category && (
+                <span className="category-badge" style={getCategoryStyle(modifier.category)}>
+                  {modifier.category}
+                </span>
+              )}
+              <h4 className="modifier-drawer-title">{modifier.title}</h4>
 
-            {modifier.description && 
-              <p className="detail-description">{modifier.description}</p>            }
+              {modifier.description && 
+                <p className="detail-description">{modifier.description}</p>
+              }
+            </div>
 
-            {modifier.ingredients && (
-              <div className="detail-section">
-                <div className="detail-section-2block">
-                  <div className="modifier-ingredients">
-                    <h3>Ingredients</h3>
-                    <ul2 stlye={{ fontsize: '2rem'}}>
-                      {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
-                    </ul2>
-                    <div className="shelf-life">
-                      <h3>Shelf Life:</h3>
-                      <ul2>
-                        {modifier.shelfLife}
+            <div className="modifier-drawer-body">
+              {modifier.ingredients && (
+                <div className="detail-section">
+                  <div className="detail-section-2block">
+                    <div className="modifier-ingredients">
+                      <h3>Ingredients</h3>
+                      <ul2 stlye={{ fontsize: '2rem'}}>
+                        {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
                       </ul2>
+                      <div className="shelf-life">
+                        <h3>Shelf Life:</h3>
+                        <ul2>
+                          {modifier.shelfLife}
+                        </ul2>
+                      </div>
                     </div>
+                    <img className="modifier-image" 
+                      src={getModifierImage(modifier.image)}
+                      alt={modifier.image ? modifier.title : 'Modifier'}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                  <img className="modifier-image" 
-                    src={getModifierImage(modifier.image)}
-                    alt={modifier.image ? modifier.title : 'Modifier'}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
-              </div>
-            )}
+              )}
 
-            {modifier.instructions && (
-              <div className="detail-section">
-                <h4>Instructions</h4>
-                <ol className="modifier-instructions">
-                  {modifier.instructions.map((step, i) => <li key={i}>{step}</li>)}
-                </ol>
-              </div>
-            )}
+              {modifier.instructions && (
+                <div className="detail-section">
+                  <h4>Instructions</h4>
+                  <ol className="modifier-instructions">
+                    {modifier.instructions.map((step, i) => <li key={i}>{step}</li>)}
+                  </ol>
+                </div>
+              )}
 
-            {modifier.notes && (
-              <div className="detail-section">
-                <h4>Notes</h4>
-                <ul>
-                  {modifier.notes.map((n, i) => <li key={i}>{n}</li>)}
-                </ul>
-              </div>
-            )}
+              {modifier.notes && (
+                <div className="detail-section">
+                  <h4>Notes</h4>
+                  <ul>
+                    {modifier.notes.map((n, i) => <li key={i}>{n}</li>)}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
         </div>,
         portalContainer
@@ -346,54 +351,59 @@ function ModifierDrawer({ modifier, onClose }) {
     <div className="modifier-overlay" onClick={handleClose}>
       <div className={`modifier-drawer ${closing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
         <button className="modifier-close" onClick={handleClose}>✕</button>
+        
+        <div className="modifier-drawer-header">
+          {modifier.category && (
+            <span className="category-badge" style={getCategoryStyle(modifier.category)}>
+              {modifier.category}
+            </span>
+          )}
+          <h4 className="modifier-drawer-title">{modifier.title}</h4>
 
-        {modifier.category && (
-          <span className="category-badge" style={getCategoryStyle(modifier.category)}>
-            {modifier.category}
-          </span>
-        )}
-        <h4 className="modifier-drawer-title">{modifier.title}</h4>
+          {modifier.description && 
+            <p className="detail-description">{modifier.description}</p>}
+        </div>
 
-        {modifier.description && <p className="detail-description">{modifier.description}</p>}
-
-        {modifier.ingredients && (
-          <div className="detail-section">
-            <div className="detail-section-2block">
-              <div className="modifier-ingredients">
-                <h3>Ingredients</h3>
-                <ul2 stlye={{ fontsize: '2rem'}}>
-                  {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
-                </ul2>
-                <div className="shelf-life">
-                  <h3>Shelf Life:</h3>
-                  <ul2>
-                    {modifier.shelfLife}
+        <div className="modifier-drawer-body">
+          {modifier.ingredients && (
+            <div className="detail-section">
+              <div className="detail-section-2block">
+                <div className="modifier-ingredients">
+                  <h3>Ingredients</h3>
+                  <ul2 stlye={{ fontsize: '2rem'}}>
+                    {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
                   </ul2>
+                  <div className="shelf-life">
+                    <h3>Shelf Life:</h3>
+                    <ul2>
+                      {modifier.shelfLife}
+                    </ul2>
+                  </div>
                 </div>
+                <img className="modifier-image" 
+                  src={getModifierImage(modifier.image)}
+                  alt={modifier.image ? modifier.title : 'Modifier'}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </div>
-              <img className="modifier-image" 
-                src={getModifierImage(modifier.image)}
-                alt={modifier.image ? modifier.title : 'Modifier'}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
-          </div>
-        )}
+          )}
 
-        {modifier.instructions && (
-          <div className="detail-section">
-            <h4>Instructions</h4>
-            <ol className="modifier-instructions">
-              {modifier.instructions.map((step, i) => <li key={i}>{step}</li>)}
-            </ol>
-          </div>
-        )}
+          {modifier.instructions && (
+            <div className="detail-section">
+              <h4>Instructions</h4>
+              <ol className="modifier-instructions">
+                {modifier.instructions.map((step, i) => <li key={i}>{step}</li>)}
+              </ol>
+            </div>
+          )}
 
-        {modifier.notes && (
-          <div className="detail-section">
-            <h4>Notes</h4>
-            <ul>{modifier.notes.map((n, i) => <li key={i}>{n}</li>)}</ul>
-          </div>
-        )}
+          {modifier.notes && (
+            <div className="detail-section">
+              <h4>Notes</h4>
+              <ul>{modifier.notes.map((n, i) => <li key={i}>{n}</li>)}</ul>
+            </div>
+          )}
+        </div>
       </div>
     </div>,
     portalContainer

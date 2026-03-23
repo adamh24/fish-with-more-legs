@@ -296,13 +296,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 7px;
-    margin: 14px 0;
+    margin-top: 14px;
+    border-bottom: 1px solid rgba(82, 183, 136, 0.1);
+    padding-bottom: 22px;
 }
 
 .detail-section {
     margin: 22px 0;
-    border-top: 1px solid rgba(82, 183, 136, 0.1);
-    padding-top: 18px;
+    border-bottom: 1px solid rgba(82, 183, 136, 0.1);
+    padding-bottom: 22px;
 }
 
 .detail-section h3 {
@@ -450,11 +452,31 @@
     border-top: 1px solid rgba(82, 183, 136, 0.25);
     padding: 40px 6% 48px;
     box-sizing: border-box;
-    overflow-y: scroll;
     animation: slideUp 0.3s ease;
     position: relative;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.modifier-drawer-header {
+    flex-shrink: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(82, 183, 136, 0.1);
+}
+
+.modifier-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 4px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.modifier-drawer-body::-webkit-scrollbar {
+    display: none;
 }
 
 .modifier-drawer.closing {
