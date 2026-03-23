@@ -41,7 +41,7 @@ const getModifierImage = (filename) => {
 
 // ─── Cocktail Detail Panel ────────────────────────────────────────────────────
 
-function CocktailDetail({ cocktail, onClose, closing }) {
+function CocktailDetail({ cocktail, onClose, closing, onModifierClick }) {
 
   useEffect(() => {
     if (cocktail) {
@@ -301,6 +301,69 @@ function ModifierCard({ modifier }) {
   );
 }
 
+// ─── Modifier / Ingredient Card (Link) ───────────────────────────────────────────────
+
+function ModifierDrawer({ modifier, onClose }) {
+  const [closing, setClosing] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, []);
+
+  const handleClose = () => {
+    setClosing(true);
+    setTimeout(() => onClose(), 300);
+  };
+
+  const portalContainer = document.body;
+
+  return ReactDOM.createPortal(
+    <div className="modifier-overlay" onClick={handleClose}>
+      <div className={`modifier-drawer ${closing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
+        <button className="modifier-close" onClick={handleClose}>✕</button>
+
+        {modifier.catagory && <span className="category-badge">{modifier.catagory}</span>}
+        <h3 className="modifier-drawer-title">{modifier.title}</h3>
+
+        {modifier.description && <p className="detail-description">{modifier.description}</p>}
+
+        {modifier.ingredients && (
+          <div className="detail-section">
+            <div className="detail-section-2block">
+              <img className="modifier-image"
+                src={getModifierImage(modifier.image)}
+                alt={modifier.image ? modifier.title : 'Modifier'}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div>
+                <h4>Ingredients</h4>
+                <ul>{modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}</ul>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {modifier.instructions && (
+          <div className="detail-section">
+            <h4>Instructions</h4>
+            <ol className="modifier-instructions">
+              {modifier.instructions.map((step, i) => <li key={i}>{step}</li>)}
+            </ol>
+          </div>
+        )}
+
+        {modifier.notes && (
+          <div className="detail-section">
+            <h4>Notes</h4>
+            <ul>{modifier.notes.map((n, i) => <li key={i}>{n}</li>)}</ul>
+          </div>
+        )}
+      </div>
+    </div>,
+    portalContainer
+  );
+}
+
 // ─── Menus Section ────────────────────────────────────────────────────────────
 
 function MenusSection({ onCocktailClick }) {
@@ -428,7 +491,16 @@ const handleCloseDetail = () => {
         cocktail={selectedCocktail}
         onClose={handleCloseDetail}
         closing={closingDetail}
-      />
+        onModifierClick={(modifier) => {
+        handleCloseDetail();
+        setTimeout(() => setSelectedModifier(modifier), 300);
+        }} />
+    
+      {selectedModifier && (
+        <ModifierDrawer
+          modifier={selectedModifier}
+          onClose={() => setSelectedModifier(null)} />
+      )}
 
     </div>
   );

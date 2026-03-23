@@ -491,6 +491,33 @@
     text-decoration: none !important; 
 }
 
+.detail-modifier-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* ─── Modifier Links ───────────────────────────────────────────────── */
+
+.modifier-link-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgb(82, 183, 136);
+    background: none;
+    border: 1px solid rgba(82, 183, 136, 0.3);
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modifier-link-btn:hover {
+    background: rgba(82, 183, 136, 0.1);
+    border-color: rgb(82, 183, 136);
+}
+
 /* ─── Menus Section ───────────────────────────────────────────────────────── */
 
 .menus-container {

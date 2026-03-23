@@ -291,7 +291,7 @@
 
     {
       "id": 11,
-      "modifierLinks": [2],
+      "modifierLinks": [2, 1],
       "title": "Park Road",
       "menu": "Modern",
       "flavors": ["Nutty", "Creamy", "Spiced"],
