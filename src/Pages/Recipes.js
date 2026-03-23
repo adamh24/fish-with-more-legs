@@ -362,6 +362,7 @@ function Recipes() {
   const [activeSection, setActiveSection] = useState('cocktails');
   const [selectedCocktail, setSelectedCocktail] = useState(null);
   const [closingDetail, setClosingDetail] = useState(false);
+  const [selectedModifier, setSelectedModifier] = useState(null);
 
 const handleCloseDetail = () => {
   setClosingDetail(true);
