@@ -218,140 +218,15 @@ function CocktailCard({ cocktail, onClick }) {
 
 // ─── Modifier / Ingredient Card ───────────────────────────────────────────────
 
-function ModifierCard({ modifier }) {
-  const [expanded, setExpanded] = useState(false);
-  const [closing, setClosing] = useState(false);
-
-  const handleClose = () => {
-  setClosing(true);
-  setTimeout(() => {
-    setExpanded(false);
-    setClosing(false);
-  }, 300);
-  };
-
-  useEffect(() => {
-  if (expanded) {
-    document.body.style.overflow = 'hidden';
-  } else {
-    document.body.style.overflow = '';
-  }
-  return () => {
-    document.body.style.overflow = '';
-  };
-}, [expanded]);
-
+function ModifierDisplay({ modifier, onClose, closing }) {
   const portalContainer = typeof document !== 'undefined' ? document.body : null;
-
-  return (
-    <>
-      <div
-        className={`modifier-card ${expanded ? 'active' : ''}`}
-        onClick={() => setExpanded(true)}
-      >
-        <div className="modifier-header">
-          {modifier.category && (
-            <span className="category-badge" style={getCategoryStyle(modifier.category)}>
-              {modifier.category}
-            </span>
-          )}
-          <h4 className="card-title">{modifier.title}</h4>
-          {modifier.brief && (
-            <p className="modifier-brief">{modifier.brief}</p>
-          )}
-        </div>
-      </div>
-
-      {expanded && portalContainer && ReactDOM.createPortal(
-        <div className="modifier-overlay" onClick={() => setExpanded(false)}>
-          <div className={`modifier-drawer ${closing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
-            <button className="modifier-close" onClick={handleClose}>✕</button>
-
-            <div className="modifier-drawer-header">
-              {modifier.category && (
-                <span className="category-badge" style={getCategoryStyle(modifier.category)}>
-                  {modifier.category}
-                </span>
-              )}
-              <h4 className="modifier-drawer-title">{modifier.title}</h4>
-
-              {modifier.description && 
-                <p className="detail-description">{modifier.description}</p>
-              }
-            </div>
-
-            <div className="modifier-drawer-body">
-              {modifier.ingredients && (
-                <div className="detail-section">
-                  <div className="detail-section-2block">
-                    <div className="modifier-ingredients">
-                      <h3>Ingredients</h3>
-                      <ul2 stlye={{ fontsize: '2rem'}}>
-                        {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
-                      </ul2>
-                      <div className="shelf-life">
-                        <h3>Shelf Life:</h3>
-                        <ul2>
-                          {modifier.shelfLife}
-                        </ul2>
-                      </div>
-                    </div>
-                    <img className="modifier-image" 
-                      src={getModifierImage(modifier.image)}
-                      alt={modifier.image ? modifier.title : 'Modifier'}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                  </div>
-                </div>
-              )}
-
-              {modifier.instructions && (
-                <div className="detail-section">
-                  <h4>Instructions</h4>
-                  <ol className="modifier-instructions">
-                    {modifier.instructions.map((step, i) => <li key={i}>{step}</li>)}
-                  </ol>
-                </div>
-              )}
-
-              {modifier.notes && (
-                <div className="detail-section">
-                  <h4>Notes</h4>
-                  <ul>
-                    {modifier.notes.map((n, i) => <li key={i}>{n}</li>)}
-                  </ul>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>,
-        portalContainer
-      )}
-    </>
-  );
-}
-
-// ─── Modifier / Ingredient Card (Link) ───────────────────────────────────────────────
-
-function ModifierDrawer({ modifier, onClose }) {
-  const [closing, setClosing] = useState(false);
-
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-    return () => { document.body.style.overflow = ''; };
-  }, []);
-
-  const handleClose = () => {
-    setClosing(true);
-    setTimeout(() => onClose(), 300);
-  };
-
-  const portalContainer = document.body;
+  if (!portalContainer) return null;
 
   return ReactDOM.createPortal(
-    <div className="modifier-overlay" onClick={handleClose}>
+    <div className="modifier-overlay" onClick={onClose}>
       <div className={`modifier-drawer ${closing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
-        <button className="modifier-close" onClick={handleClose}>✕</button>
-        
+        <button className="modifier-close" onClick={onClose}>✕</button>
+
         <div className="modifier-drawer-header">
           {modifier.category && (
             <span className="category-badge" style={getCategoryStyle(modifier.category)}>
@@ -359,9 +234,9 @@ function ModifierDrawer({ modifier, onClose }) {
             </span>
           )}
           <h4 className="modifier-drawer-title">{modifier.title}</h4>
-
-          {modifier.description && 
-            <p className="detail-description">{modifier.description}</p>}
+          {modifier.description && (
+            <p className="detail-description">{modifier.description}</p>
+          )}
         </div>
 
         <div className="modifier-drawer-body">
@@ -370,20 +245,18 @@ function ModifierDrawer({ modifier, onClose }) {
               <div className="detail-section-2block">
                 <div className="modifier-ingredients">
                   <h3>Ingredients</h3>
-                  <ul2 stlye={{ fontsize: '2rem'}}>
-                    {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
-                  </ul2>
+                  <ul2>{modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}</ul2>
                   <div className="shelf-life">
                     <h3>Shelf Life:</h3>
-                    <ul2>
-                      {modifier.shelfLife}
-                    </ul2>
+                    <ul2>{modifier.shelfLife}</ul2>
                   </div>
                 </div>
-                <img className="modifier-image" 
+                <img
+                  className="modifier-image"
                   src={getModifierImage(modifier.image)}
                   alt={modifier.image ? modifier.title : 'Modifier'}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
               </div>
             </div>
           )}
@@ -408,6 +281,61 @@ function ModifierDrawer({ modifier, onClose }) {
     </div>,
     portalContainer
   );
+}
+
+// ─── ModifierCard (grid card + its own drawer) ────────────────────────────────
+
+function ModifierCard({ modifier }) {
+  const [expanded, setExpanded] = useState(false);
+  const [closing, setClosing] = useState(false);
+
+  const handleClose = () => {
+    setClosing(true);
+    setTimeout(() => { setExpanded(false); setClosing(false); }, 300);
+  };
+
+  useEffect(() => {
+    document.body.style.overflow = expanded ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [expanded]);
+
+  return (
+    <>
+      <div className={`modifier-card ${expanded ? 'active' : ''}`} onClick={() => setExpanded(true)}>
+        <div className="modifier-header">
+          {modifier.category && (
+            <span className="category-badge" style={getCategoryStyle(modifier.category)}>
+              {modifier.category}
+            </span>
+          )}
+          <h4 className="card-title">{modifier.title}</h4>
+          {modifier.brief && <p className="modifier-brief">{modifier.brief}</p>}
+        </div>
+      </div>
+
+      {expanded && (
+        <ModifierDisplay modifier={modifier} onClose={handleClose} closing={closing} />
+      )}
+    </>
+  );
+}
+
+// ─── ModifierDrawer (opened via cocktail modifier links) ──────────────────────
+
+function ModifierDrawer({ modifier, onClose }) {
+  const [closing, setClosing] = useState(false);
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = ''; };
+  }, []);
+
+  const handleClose = () => {
+    setClosing(true);
+    setTimeout(() => onClose(), 300);
+  };
+
+  return <ModifierDisplay modifier={modifier} onClose={handleClose} closing={closing} />;
 }
 
 // ─── Menus Section ────────────────────────────────────────────────────────────
