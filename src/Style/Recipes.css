@@ -305,7 +305,15 @@
     padding-top: 18px;
 }
 
-.detail-section h3,
+.detail-section h3 {
+    font-family: 'Antonio', sans-serif;
+    font-size: 1.6rem;
+    color: rgb(184, 228, 204);
+    margin: 0 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
 .detail-section h4 {
     font-family: 'Antonio', sans-serif;
     font-size: 1rem;
@@ -320,10 +328,12 @@
     font-size: 1.1rem;
     font-weight: bold;
     text-decoration: underline;
+    text-underline-offset: 3px;
     color: rgb(132 162 149);
     padding-left: 20px;
     line-height: 2;
     margin: 0;
+    letter-spacing: 0.5px;
 }
 
 .detail-section ul {
@@ -334,6 +344,14 @@
     line-height: 2;
     margin: 0;
 }
+
+.detail-section ul2 {
+    font-family: 'DM Mono', monospace;
+    font-size: 1rem;
+    color: rgb(101, 119, 111);
+    padding-left: 20px;
+    line-height: 2;
+    margin: 0 0 12px 0;}
 
 .detail-section li {
     margin-bottom: 2px;
@@ -378,10 +396,9 @@
 .category-badge {
     font-family: 'DM Mono', monospace;
     font-size: 0.68rem;
-    color: rgb(245, 172, 114);
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    border: 1px solid rgba(245, 172, 114, 0.4);
+    border: 1px solid;
     padding: 2px 9px;
     display: inline-block;
     align-self: flex-start;
@@ -395,11 +412,22 @@
     font-style: italic;
 }
 
+.modifier-ingredients {
+    display: flex;
+    flex-direction: column;
+}
+
 .modifier-detail {
     margin-top: 18px;
     border-top: 1px solid rgba(82, 183, 136, 0.1);
     padding-top: 16px;
     animation: fadeUp 0.2s ease;
+}
+
+.shelf-life {
+    display: flex;
+    padding-top: 25px;
+    align-items: flex-end;
 }
 
 /* ─── Modifier Drawer Overlay ─────────────────────────────────────────────── */
@@ -417,7 +445,7 @@
 
 .modifier-drawer {
     width: 100%;
-    max-height: 96vh;
+    max-height: 100vh;
     background: rgb(9, 15, 11);
     border-top: 1px solid rgba(82, 183, 136, 0.25);
     padding: 40px 6% 48px;
@@ -489,6 +517,33 @@
 
 .modifier-instructions {
     text-decoration: none !important; 
+}
+
+/* ─── Modifier Links ───────────────────────────────────────────────── */
+
+.detail-modifier-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.modifier-link-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgb(82, 183, 136);
+    background: none;
+    border: 1px solid rgba(82, 183, 136, 0.3);
+    padding: 4px 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modifier-link-btn:hover {
+    background: rgba(82, 183, 136, 0.1);
+    border-color: rgb(82, 183, 136);
 }
 
 /* ─── Menus Section ───────────────────────────────────────────────────────── */

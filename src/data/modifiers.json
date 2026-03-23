@@ -1,11 +1,12 @@
 [
     {
         "id": 1,
-        "catagory": "Foams",
+        "category": "Foam",
         "title": "Chocolate Raspberry Whipped Cream",
-        "breif": "A rich and indulgent whipped cream, perfect for topping cocktails or desserts.",
+        "brief": "A rich and indulgent whipped cream, perfect for topping cocktails or desserts.",
         "image": "foam.jpg",
         "description": "Fresh raspberry and chocolate creamy cocktail foam. Inspired by a chocolate selection from Hotel Chocolat, this velvet topping was created to accompany a pistatio-cream washed bourbon, the foam's rose tint since beautifuly upon the bottle green liqueur. It's the perfect treat for the pastel girlies",
+        "shelfLife": "1 week, keep refrigerated",
         "ingredients": [
             "100g Hot Chocolate Powder",
             "200g Frozen Raspberries",
@@ -28,11 +29,12 @@
 
     {
         "id": 2,
-        "catagory": "Clarified",
+        "category": "Clarified",
         "title": "Pistacio Bourbon",
-        "breif": "A nutty, creamy bourbon with a punch of pistacio",
+        "brief": "A nutty, creamy bourbon with a punch of pistacio",
         "image": "PistacioBourbon.jpg",
         "description": "Originally created to be featured in an experimental cocktail menu, the pistatio bouron ended up being a star in its own right, and may have been consumed before the intended cocktail was even tested... The pistacio cream fat-washed bourbon is a unique and flavorful spirit that combines the rich, nutty flavor of pistachios with the smooth, warming qualities of bourbon. The process of fat-washing involves infusing the bourbon with the flavors of the pistachio cream, resulting in a complex and delicious spirit that can be enjoyed on its own or used as a base for cocktails.",
+        "shelfLife": "3 weeks, keep refrigerated",
         "ingredients": [
             "500ml Bourbon",
             "300g Pistacio Cream",
@@ -43,92 +45,87 @@
             "Gently pour the bourbon over the pistacio cream, and seal the container.",
             "Place the container in the fridge and let it infuse for 24-48 hours.",
             "Once the bourbon has been infused, gently pour out the liquid, through a strainer/cheesecloth, into a clean bottle.",
-            "Store in the fridge and enjoy for up to 3 weeks!"
+            "Serve over ice and enjoy!"
         ],
         "notes": [
             "For a stronger infusion, mix and blend the pistacio cream and bourbon together before placing in the freezer for 24-48 hours. Then remove the frozen layer and strain the liquid through a coffee filter/cheesecloth, into a clean bottle."
         ]
 
     },
+
     {
         "id": 3,
-        "title": "Pistacio Foam",
-        "flavors": ["Chocolate", "Raspberry", "Foam"],
-        "image": "./assets/cocktail1.png",
-        "description": "Chocolaty, Raspberryey foam like think",
+        "category": "Syrup",
+        "title": "Ginger Syrup",
+        "brief": "A spicy and sweet ginger syrup, the best way to add a kick to cocktails or mocktails.",
+        "image": "ginger-syrup.jpg",
+        "description": "This ginger syrup is a versatile and flavorful addition to any cocktail or mocktail. Made with fresh ginger, sugar, and water, it has a perfect balance of sweetness and spiciness that can enhance the flavor of any drink. Whether you're looking to add a little heat to your favorite cocktail or want to create a refreshing non-alcoholic beverage, this ginger syrup is sure to become a staple in your bar.",
+        "shelfLife": "2 weeks, keep refrigerated",
         "ingredients": [
-            "Chocolate",
-            "Raspberry",
-            "Foam"
+            "200g Fresh Ginger",
+            "200g Sugar",
+            "200ml Water"
         ],
         "instructions": [
-            "Add all ingredients to a squirty can.",
-            "Shake vigorously for 15-20 seconds.",
-            "chill for time.",
-            "SQUIRT."
-        ],
-        "pairings": [
-            "Chocolate desserts",
-            "Cheesecake",
-            "Breasts"
+            "Peel and thinly slice the fresh ginger.",
+            "Combine the chopped ginger, sugar, and water in a saucepan.",
+            "Bring the mixture to a boil over medium heat, stirring occasionally until the sugar has dissolved.",
+            "Reduce the heat, cover with a lid, and let it simmer for about 20 minutes, allowing the flavors to infuse.",
+            "Remove from heat and let it cool completely.",
+            "Strain the syrup through a fine mesh sieve or cheesecloth into a clean bottle.",
+            "Add to hot water with lemon for a soothing tea!"
         ],
         "notes": [
-            "Squirt with purpose!"
+            "For an extra kick, you can add a pinch of cayenne pepper or a few slices of jalapeño during the simmering process."
         ]
-
     },
+
     {
         "id": 4,
-        "title": "Grenadine Foam",
-        "flavors": ["Chocolate", "Raspberry", "Foam"],
-        "image": "./assets/cocktail1.png",
-        "description": "Chocolaty, Raspberryey foam like think",
+        "category": "Syrup",
+        "title": "Pomogranate and Clover Cordial",
+        "brief": "A sweet and tangy cordial with a floral note, perfect for adding depth to cocktails or mocktails.",
+        "image": "pomogranate-clover-cordial.jpg",
+        "description": "This pomegranate and clover cordial is a delicious and versatile addition to any cocktail or mocktail. Made with fresh pomegranate juice, sugar, and clover honey, it has a perfect balance of sweetness and tanginess with a subtle floral note. Whether you're looking to add a unique twist to your favorite cocktail or want to create a refreshing non-alcoholic beverage, this cordial is sure to become a staple in your bar.",
+        "shelfLife": "2 weeks, keep refrigerated",        
         "ingredients": [
-            "Chocolate",
-            "Raspberry",
-            "Foam"
+            "200ml Fresh Pomegranate Juice",
+            "100g Sugar",
+            "10g Whole Clovers"
         ],
         "instructions": [
-            "Add all ingredients to a squirty can.",
-            "Shake vigorously for 15-20 seconds.",
-            "chill for time.",
-            "SQUIRT."
-        ],
-        "pairings": [
-            "Chocolate desserts",
-            "Cheesecake",
-            "Breasts"
+            "Combine the pomegranate juice, sugar, and whole clovers in a saucepan.",
+            "Bring the mixture to a boil over medium heat, stirring occasionally until the sugar has dissolved.",
+            "Reduce the heat, cover with a lid, and let it simmer for about 15 minutes, allowing the flavors to infuse.",
+            "Remove from heat and let it cool completely.",
+            "Strain the cordial through a fine mesh sieve or cheesecloth into a clean bottle.",
+            "Mix with iced soda water for a refreshing summer drink!"
         ],
         "notes": [
-            "Squirt with purpose!"
+            "Experiment with different types of christmas spices, such as cinnamon sticks, star anise, or nutmeg, to create your own unique flavor profile."
         ]
+    },
 
-    }, 
     {
         "id": 5,
-        "title": "Peach Jasmine Syrup",
-        "flavors": ["Peach", "Jasmine", "Syrup"],
-        "image": "./assets/cocktail1.png",
-        "description": "Peach Jasmine Syrupy thingy",
+        "category": "Clarified",
+        "title": "Clarified Amarula and Vermouth Liqueur",
+        "brief": "A clear and golden liqueur with a rich, creamy texture and a complex flavor profile.",
+        "image": "clarified-amarula-vermouth.jpg",
+        "description": "This clarified amarula and vermouth liqueur is a luxurious and sophisticated addition to any bar. Made by clarifying the base ingredients, it has a crystal-clear appearance and a smooth, velvety texture with a rich, creamy flavor. Whether you're looking to add a touch of elegance to your favorite cocktail or just enjoy a sophisticated aperitivo, this clarified liqueur is go to.",
+        "shelfLife": "2 weeks, keep refrigerated",
         "ingredients": [
-            "Peach",
-            "Jasmine"
+            "200ml Amarula",
+            "200ml Sweet Vermouth"
         ],
         "instructions": [
-            "Add all ingredients to a squirty can.",
-            "Shake vigorously for 15-20 seconds.",
-            "chill for time.",
-            "SQUIRT."
-        ],
-        "pairings": [
-            "Chocolate desserts",
-            "Cheesecake",
-            "Breasts"
+            "Combine the amarula and sweet vermouth in an 'easy to pour container'.",
+            "Stir the mix and let is sit for 30 minutes. (You will notice the mixture will start to curdle)",
+            "Stir the mixture gently again and pour through a cheesecloth or coffee filter several times into a clean bottle, until the liquid is clear and free of any solids.",
+            "Serve over ice and enjoy!"
         ],
         "notes": [
-            "Squirt with purpose!"
+            "The clarification process requires careful attention to temperature and timing to achieve the best results."
         ]
-
     }
-
 ]
