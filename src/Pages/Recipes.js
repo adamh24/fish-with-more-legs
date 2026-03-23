@@ -39,6 +39,21 @@ const getModifierImage = (filename) => {
   }
 };
 
+const categoryColours = {
+  'Foam':         { color: 'rgb(245, 172, 114)', border: 'rgba(245, 172, 114, 0.4)' },
+  'Syrup':        { color: 'rgb(180, 82, 183)',  border: 'rgba(180, 82, 183, 0.4)'  },
+  'Clarified':    { color: 'rgb(200, 100, 100)', border: 'rgba(200, 100, 100, 0.4)' },
+};
+
+const getCategoryStyle = (category) => {
+  const colours = categoryColours[category];
+  if (!colours) return {};
+  return {
+    color: colours.color,
+    borderColor: colours.border,
+  };
+};
+
 // ─── Cocktail Detail Panel ────────────────────────────────────────────────────
 
 function CocktailDetail({ cocktail, onClose, closing, onModifierClick }) {
@@ -87,7 +102,7 @@ function CocktailDetail({ cocktail, onClose, closing, onModifierClick }) {
         <div className="detail-body">
           {cocktail.ingredients && (
             <div className="detail-section">
-              <h3>Ingredients</h3>
+              <h4>Ingredients</h4>
               <ul>
                 {cocktail.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
               </ul>
@@ -117,7 +132,7 @@ function CocktailDetail({ cocktail, onClose, closing, onModifierClick }) {
 
           {(cocktail.method || cocktail.glass || cocktail.ice || cocktail.garnish) && (
             <div className="detail-section">
-              <h3>Instructions</h3>
+              <h4>Instructions</h4>
               <div className="detail-instructions">
                 {cocktail.method && (
                   <div className="instruction-row">
@@ -149,7 +164,7 @@ function CocktailDetail({ cocktail, onClose, closing, onModifierClick }) {
 
           {cocktail.pairings && (
             <div className="detail-section">
-              <h3>Pairings</h3>
+              <h4>Pairings</h4>
               <ul>
                 {cocktail.pairings.map((p, i) => <li key={i}>{p}</li>)}
               </ul>
@@ -158,7 +173,7 @@ function CocktailDetail({ cocktail, onClose, closing, onModifierClick }) {
 
           {cocktail.notes && (
             <div className="detail-section">
-              <h3>Notes</h3>
+              <h4>Notes</h4>
               <ul>
                 {cocktail.notes.map((n, i) => <li key={i}>{n}</li>)}
               </ul>
@@ -187,7 +202,7 @@ function CocktailCard({ cocktail, onClick }) {
       </div>
       <div className="card-body">
         <span className="menu-badge">{Array.isArray(cocktail.menu) ? cocktail.menu.join(' · ') : cocktail.menu}</span>
-        <h3 className="card-title">{cocktail.title}</h3>
+        <h4 className="card-title">{cocktail.title}</h4>
         {cocktail.description && (
           <p className="card-description">{cocktail.description}</p>
         )}
@@ -235,12 +250,14 @@ function ModifierCard({ modifier }) {
         onClick={() => setExpanded(true)}
       >
         <div className="modifier-header">
-          {modifier.catagory && (
-            <span className="category-badge">{modifier.catagory}</span>
+          {modifier.category && (
+            <span className="category-badge" style={getCategoryStyle(modifier.category)}>
+              {modifier.category}
+            </span>
           )}
-          <h3 className="card-title">{modifier.title}</h3>
-          {modifier.breif && (
-            <p className="modifier-brief">{modifier.breif}</p>
+          <h4 className="card-title">{modifier.title}</h4>
+          {modifier.brief && (
+            <p className="modifier-brief">{modifier.brief}</p>
           )}
         </div>
       </div>
@@ -250,29 +267,36 @@ function ModifierCard({ modifier }) {
           <div className={`modifier-drawer ${closing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
             <button className="modifier-close" onClick={handleClose}>✕</button>
 
-            {modifier.catagory && (
-              <span className="category-badge">{modifier.catagory}</span>
+            {modifier.category && (
+              <span className="category-badge" style={getCategoryStyle(modifier.category)}>
+                {modifier.category}
+              </span>
             )}
-            <h3 className="modifier-drawer-title">{modifier.title}</h3>
+            <h4 className="modifier-drawer-title">{modifier.title}</h4>
 
-            {modifier.description && (
-              <p className="detail-description">{modifier.description}</p>
-            )}
+            {modifier.description && 
+              <p className="detail-description">{modifier.description}</p>            }
 
             {modifier.ingredients && (
               <div className="detail-section">
-              <div className="detail-section-2block">
-                <img className="modifier-image" 
+                <div className="detail-section-2block">
+                  <div className="modifier-ingredients">
+                    <h3>Ingredients</h3>
+                    <ul2 stlye={{ fontsize: '2rem'}}>
+                      {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
+                    </ul2>
+                    <div className="shelf-life">
+                      <h3>Shelf Life:</h3>
+                      <ul2>
+                        {modifier.shelfLife}
+                      </ul2>
+                    </div>
+                  </div>
+                  <img className="modifier-image" 
                     src={getModifierImage(modifier.image)}
                     alt={modifier.image ? modifier.title : 'Modifier'}
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                <div> 
-                  <h4>Ingredients</h4>
-                  <ul>
-                    {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
-                  </ul>
                 </div>
-              </div>
               </div>
             )}
 
@@ -323,22 +347,34 @@ function ModifierDrawer({ modifier, onClose }) {
       <div className={`modifier-drawer ${closing ? 'closing' : ''}`} onClick={e => e.stopPropagation()}>
         <button className="modifier-close" onClick={handleClose}>✕</button>
 
-        {modifier.catagory && <span className="category-badge">{modifier.catagory}</span>}
-        <h3 className="modifier-drawer-title">{modifier.title}</h3>
+        {modifier.category && (
+          <span className="category-badge" style={getCategoryStyle(modifier.category)}>
+            {modifier.category}
+          </span>
+        )}
+        <h4 className="modifier-drawer-title">{modifier.title}</h4>
 
         {modifier.description && <p className="detail-description">{modifier.description}</p>}
 
         {modifier.ingredients && (
           <div className="detail-section">
             <div className="detail-section-2block">
-              <img className="modifier-image"
+              <div className="modifier-ingredients">
+                <h3>Ingredients</h3>
+                <ul2 stlye={{ fontsize: '2rem'}}>
+                  {modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}
+                </ul2>
+                <div className="shelf-life">
+                  <h3>Shelf Life:</h3>
+                  <ul2>
+                    {modifier.shelfLife}
+                  </ul2>
+                </div>
+              </div>
+              <img className="modifier-image" 
                 src={getModifierImage(modifier.image)}
                 alt={modifier.image ? modifier.title : 'Modifier'}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div>
-                <h4>Ingredients</h4>
-                <ul>{modifier.ingredients.map((ing, i) => <li key={i}>{ing}</li>)}</ul>
-              </div>
             </div>
           </div>
         )}
