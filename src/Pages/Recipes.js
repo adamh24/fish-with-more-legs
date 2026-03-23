@@ -94,6 +94,27 @@ function CocktailDetail({ cocktail, onClose, closing }) {
             </div>
           )}
 
+          {cocktail.modifierLinks && (
+            <div className="detail-modifier-links">
+              {cocktail.modifierLinks.map(id => {
+                const modifier = modifiersData.find(m => m.id === id);
+                if (!modifier) return null;
+                return (
+                  <button
+                    key={id}
+                    className="modifier-link-btn"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onModifierClick(modifier);
+                    }}
+                  >
+                    {modifier.title} ↗
+                  </button>
+                );
+              })}
+            </div>
+          )}
+
           {(cocktail.method || cocktail.glass || cocktail.ice || cocktail.garnish) && (
             <div className="detail-section">
               <h3>Instructions</h3>

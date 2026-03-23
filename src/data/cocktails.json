@@ -287,6 +287,32 @@
       "notes": [
         "Use a good quality blanco tequila, the purity of the base is crucial in a quality margarita."
       ]
-    }
-    
+    },
+
+    {
+      "id": 11,
+      "modifierLinks": [2],
+      "title": "Park Road",
+      "menu": "Modern",
+      "flavors": ["Nutty", "Creamy", "Spiced"],
+      "image": "./assets/cocktail2.png",
+      "description": "",
+      "ingredients": [
+        "50ml Pistacio Bourbon",
+        "2 Dashes Angostura Bitters",
+        "Topped with Raspberry and Chocolate Whipped Cream"
+      ],
+      "method": "Stirred",
+      "glass": "Rocks Glass",
+      "ice": "Large Cube",
+      "garnish": "Raspberry Powder",
+      "Pairings": [
+        "",
+        "",
+        ""
+      ],
+      "notes": [
+        ""
+      ]
+    }    
   ]
