@@ -304,8 +304,8 @@
 
 .course-section {
     margin: 28px 0;
-    border-top: 1px solid rgba(82, 183, 136, 0.1);
-    padding-top: 20px;
+    border-bottom: 1px solid rgba(82, 183, 136, 0.1);
+    padding-bottom: 20px;
 }
 
 .course-section h3 {
@@ -340,6 +340,11 @@
     color: rgb(245, 172, 114) !important;
     line-height: 1.6;
     margin-top: 8px !important;
+}
+
+.documents {
+    display: flex;
+    align-items: center;
 }
 
 /* ─── Curriculum Accordion ────────────────────────────────────────────────── */

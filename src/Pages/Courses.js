@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ReactDOM from 'react-dom';
 import coursesData from '../data/courses.json';
+import PolicyLink from '../Components/PolicyLink';
 import '../Style/Courses.css';
 
 // ─── Module Accordion ─────────────────────────────────────────────────────────
@@ -137,6 +138,16 @@ function CourseDetail({ course, onClose }) {
                   <p className="certification-note">🎓 {course.assessment.certification}</p>
                 </div>
               )}
+
+              <div className="course-section">
+                <h3>Documents</h3>
+                <div className="documents">
+                  <ul>Policy/Code of Conduct:</ul>
+                  <PolicyLink />
+                </div>
+
+              </div>
+
             </div>
           )}
 
