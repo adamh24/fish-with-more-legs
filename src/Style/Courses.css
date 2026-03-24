@@ -286,8 +286,14 @@
 
 .course-detail-body {
     flex: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     padding: 32px 40px 48px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.course-detail-body::-webkit-scrollbar {
+    display: none;
 }
 
 .detail-tab-content {
