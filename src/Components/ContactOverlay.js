@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import '../Style/ContactOverlay.css';
 import CopyIcon from '../Assets/copy.png';
-import CopiedIcon from '../Assets/checked.png';
+import CheckedIcon from '../Assets/checked.png';
 
 function CopyButton({ text }) {
   const [copied, setCopied] = useState(false);
@@ -16,7 +16,7 @@ function CopyButton({ text }) {
 
   return (
     <button className="copy-btn" onClick={handleCopy}>
-      <img src={copied ? CopiedIcon : CopyIcon} alt={copied ? 'Copied' : 'Copy'} />
+      <img src={copied ? CheckedIcon : CopyIcon} alt={copied ? 'Copied' : 'Copy'} />
     </button>
   );
 }

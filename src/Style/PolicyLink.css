@@ -1,0 +1,22 @@
+.download-btn {
+    background: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    padding-inline: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.download-btn img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.download-btn:hover img {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 6px rgba(82, 183, 136, 0.8));
+    transition: all 0.2s ease;
+}
