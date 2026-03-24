@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import coursesData from '../data/courses.json';
 import PolicyLink from '../Components/PolicyLink';
@@ -79,6 +79,15 @@ function ScheduleTimeline({ schedule }) {
 function CourseDetail({ course, onClose }) {
   const [tab, setTab] = useState('overview');
   const tabs = ['overview', 'curriculum', 'schedule', 'info'];
+
+  useEffect(() => {
+    if (course) {
+      document.body.style.overflow = 'hidden';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [course]);
 
   if (!course) return null;
 
