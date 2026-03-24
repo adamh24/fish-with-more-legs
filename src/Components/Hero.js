@@ -1,6 +1,6 @@
 import '../Style/Hero.css';
 import FastTravel from '../Components/FastTravel';
-import Logo from '../Assets/Logo.jpg';
+import Logo from '../Assets/logo-green-left.png';
 
 function Hero() {
   return (
