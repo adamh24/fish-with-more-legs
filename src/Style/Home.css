@@ -25,7 +25,7 @@
 .cocktail-banner-track {
     display: flex;
     width: max-content;
-    animation: home-cocktail-scroll 30s linear infinite;
+    animation: home-cocktail-scroll 90s linear infinite;
 }
 
 .cocktail-banner-item {
