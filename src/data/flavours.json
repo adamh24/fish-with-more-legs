@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "title": "Cherry",
+        "image": "cherry.jpg",
+        "profile":
+            [
+                "Sweet",
+                "Fruity",
+                "Floral"
+            ]
+    },
+
+    {
+        "id": 2,
+        "title": "Berry Blast",
+        "image": "Icon",
+        "profile":
+            [
+                "Sweet",
+                "Fruity",
+                "Tart"
+            ]
+
+    },
+
+    {
+        "id": 3,
+        "title": "Citrus Lemon",
+        "image": "Icon",
+        "profile":
+            [
+                "Sour",
+                "Citrus",
+                "Refreshing"
+            ]
+    },
+
+    {
+        "id": 4,
+        "title": "Vanilla Cream",
+        "image": "Icon",
+        "profile":
+            [
+                "Sweet",
+                "Creamy",
+                "Smooth"
+            ] 
+    },
+
+    {
+        "id": 5,
+        "title": "Strawberry",
+        "image": "Icon",
+        "profile":
+            [
+                "Sweet",
+                "Fruity",
+                "Juicy"
+            ]
+
+    },
+
+    {
+        "id": 6,
+        "title": "Cherry Cola",
+        "image": "Icon",
+        "profile":
+            [
+                "Sweet",
+                "Fizzy",
+                "Cola"
+            ]
+
+    },
+
+    {
+        "id": 7,
+        "title": "Peach Nectar",
+        "image": "Icon",
+        "profile":
+            [
+                "Sweet",
+                "Fruity",
+                "Juicy"
+            ]
+
+    },
+
+    {
+        "id": 8,
+        "title": "Grape Fizz",
+        "image": "Icon",
+        "profile":
+            [
+                "Sweet",
+                "Fruity",
+                "Bubbly"
+            ]
+
+    },
+
+    {
+        "id": 9,
+        "title": "Watermelon Splash",
+        "image": "Icon",
+        "profile":
+            [
+                "Sweet",
+                "Fruity",
+                "Juicy"
+            ]
+
+    },
+
+    {
+        "id": 10,
+        "title": "Pineapple Punch",
+        "image": "Icon",
+        "profile":
+            [
+                "Sweet",
+                "Tropical",
+                "Tangy"
+            ]
+
+    }
+]
