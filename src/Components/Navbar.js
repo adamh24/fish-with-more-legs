@@ -1,9 +1,10 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import NavDropdown from './NavDropdown'
 import '../Style/Navbar.css'
+import logo from '../Assets/logo-green-left.png'
 
 function Navbar ({ onOpenContact }) {
-
   useEffect(() => {
     const nav = document.querySelector('nav')
     
@@ -22,12 +23,14 @@ function Navbar ({ onOpenContact }) {
 
   return (
     <nav>
-
+      
+        <NavDropdown onOpenContact={onOpenContact} />
         <Link className='tab' to='/courses'>Courses</Link>
         <Link className='tab' to='/recipes'>Recipes</Link>
         <Link className="title" to='/'>Fish With Legs</Link>
         <Link className='tab' to='/about'>About</Link>
         <div className='tab' onClick={onOpenContact}>Contact</div>
+        <img className='nav-logo' src={logo} alt='Logo' />
         
     </nav>
   )

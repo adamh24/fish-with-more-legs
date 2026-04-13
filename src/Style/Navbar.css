@@ -6,7 +6,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   color: white;
   background: linear-gradient(
     to bottom,
@@ -24,8 +24,6 @@ nav {
     text-decoration: none;
     border-bottom: 2px solid rgb(82, 183, 136);
     padding-bottom: 15px;
-    /* padding-left: 200px;
-    padding-right: 200px; */
     display: inline-block;
     width: 40%;
     text-align: center;
@@ -59,7 +57,14 @@ nav {
   .tab {
     font-size: 1rem;
     padding: 5px 10px;
-  }  
+  }
+}
+
+.nav-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
 }
 
 @media (max-width: 470px) {
@@ -75,10 +80,10 @@ nav {
 
     }
 
-    .title {
-        order: -1; /* title sits at top */
-        width: 100%;
-        text-align: center;
-    }
+.title {
+    order: -1; /* title sits at top */
+    width: 100%;
+    text-align: center;
+}
 
 }
