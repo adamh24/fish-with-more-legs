@@ -21,6 +21,9 @@ const getFlavourImage = (filename) => {
   }
 };
 
+
+
+
 function FlavourWheel() {
   return (
     <div className='flavour-wheel-container'>
