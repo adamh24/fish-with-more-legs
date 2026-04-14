@@ -48,9 +48,8 @@ function FlavourEngine() {
     return flavourData.filter((flavour) => {
       const titleMatch = flavour.title.toLowerCase().includes(query);
       const categoryMatch = flavour.category.toLowerCase().includes(query);
-      const profileMatch = flavour.profile.toLowerCase().includes(query);
 
-      return titleMatch || categoryMatch || profileMatch;
+      return titleMatch || categoryMatch;
     });
   }, [searchTerm]);
 
@@ -67,7 +66,7 @@ function FlavourEngine() {
         <input
           type="search"
           className="flavour-engine-search"
-          placeholder="Search by flavour, category, or profile"
+          placeholder="Search by flavour or category"
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
           aria-label="Search flavour"
@@ -95,9 +94,9 @@ function FlavourEngine() {
                   </div>
                   <span className="flavour-engine-item-compatibility-value">%</span>
                 </div>
-                <div className="flavour-engine-item-profiles">
-                  {flavour.profile.map((profile) => (
-                    <span className="flavour-engine-profile-tag" key={profile}>{profile}</span>
+                <div className="flavour-engine-item-category">
+                  {flavour.category.map((category) => (
+                    <span className="flavour-engine-category-tag" key={category}>{category}</span>
                   ))}
                 </div>
              </div>
