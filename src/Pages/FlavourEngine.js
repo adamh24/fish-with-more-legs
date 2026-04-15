@@ -42,7 +42,7 @@ function FlavourEngine() {
     const query = searchTerm.trim().toLowerCase();
 
     if (!query) {
-      return flavourData;
+      return [...flavourData].sort((a, b) => a.title.localeCompare(b.title));
     }
 
     return flavourData.filter((flavour) => {
@@ -78,7 +78,7 @@ function FlavourEngine() {
       </p>
 
       <div className="flavour-engine-results">
-        {filteredFlavour.map((flavour) => (
+        {paginatedFlavour.map((flavour) => (
           <article className="flavour-engine-item" key={flavour.id}>
              <img className="flavour-engine-item-image" src={getFlavourImage(flavour.image)} alt={flavour.title} />
              <div className="flavour-engine-item-title-block">
@@ -94,10 +94,8 @@ function FlavourEngine() {
                   </div>
                   <span className="flavour-engine-item-compatibility-value">%</span>
                 </div>
-                <div className="flavour-engine-item-category">
-                  {flavour.category.map((category) => (
-                    <span className="flavour-engine-category-tag" key={category}>{category}</span>
-                  ))}
+                <div className="flavour-engine-item-category">                 
+                    <span className="flavour-engine-category-tag">{flavour.category}</span>
                 </div>
              </div>
           </article>
