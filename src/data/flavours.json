@@ -49,14 +49,14 @@
     },
     {
         "id": 9, 
-        "title": "Lemon Zest", 
-        "image": "lemon-zest.jpg", 
-        "category": "Citrus"
+        "title": "Mustard Seed", 
+        "image": "mustard-seed.jpg", 
+        "category": "Spice"
     },
     {
         "id": 10, 
-        "title": "Lime Zest", 
-        "image": "lime-zest.jpg", 
+        "title": "Pomegranate", 
+        "image": "pomegranate.jpg", 
         "category": "Citrus"
     },
     {
@@ -598,5 +598,11 @@
         "title": "Brown Sugar", 
         "image": "brown-sugar.jpg", 
         "category": "Sweet"
+    },
+    {
+        "id": 101,
+        "title": "Olive",
+        "image": "olive.jpg",
+        "category": "Tree Fruit"
     }
 ]

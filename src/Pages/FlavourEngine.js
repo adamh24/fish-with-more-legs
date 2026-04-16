@@ -2,26 +2,11 @@ import { useMemo, useState } from 'react';
 import flavourData from '../data/flavours.json';
 import '../Style/FlavourEngine.css';
 
-const imageContext = require.context('../Assets/Flavours', false, /\.(png|jpe?g|svg)$/);
-
-const flavourImg = (() => {
-  try {
-    return imageContext('./modifier.png');
-  } catch {
-    return null;
-  }
-})();
 
 const getFlavourImage = (filename) => {
-  if (!filename) return flavourImg;
-  try {
-    return imageContext(`./${filename}`);
-  } catch {
-    return flavourImg;
-  }
+  if (!filename) return '../Assets/modifier.png';
+    return `/images/flavours/${filename}`;
 };
-
-
 
 
 function FlavourWheel() {
@@ -31,8 +16,6 @@ function FlavourWheel() {
     </div>
   );
 }
-
-
 
 
 function FlavourEngine() {
@@ -53,6 +36,15 @@ function FlavourEngine() {
     });
   }, [searchTerm]);
 
+  
+  const PAGE_SIZE = 21;
+  const [page, setPage] = useState(1);
+
+  const paginatedFlavour = useMemo(() => {
+    return filteredFlavour.slice(0, page * PAGE_SIZE);
+  }, [filteredFlavour, page]);
+
+
   return (
     <div className="flavour-engine-container">
 
@@ -62,6 +54,8 @@ function FlavourEngine() {
 
       <FlavourWheel />
 
+      <hr className="divider" />
+
       <div className="flavour-engine-search-wrap">
         <input
           type="search"
@@ -69,6 +63,12 @@ function FlavourEngine() {
           placeholder="Search by flavour or category"
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Escape') {
+            setSearchTerm('');
+            e.target.blur();
+            }
+          }}
           aria-label="Search flavour"
         />
       </div>
@@ -80,8 +80,17 @@ function FlavourEngine() {
       <div className="flavour-engine-results">
         {paginatedFlavour.map((flavour) => (
           <article className="flavour-engine-item" key={flavour.id}>
-             <img className="flavour-engine-item-image" src={getFlavourImage(flavour.image)} alt={flavour.title} />
-             <div className="flavour-engine-item-title-block">
+              <img className="flavour-engine-item-image" 
+                src={getFlavourImage(flavour.image)} 
+                alt={flavour.title} 
+                loading='lazy'
+                decoding="async"
+                onError={(e) => {
+                  e.target.src = '/images/flavours/modifier.png';
+                  e.target.onerror = null;
+                }}
+              />
+              <div className="flavour-engine-item-title-block">
                 <span className="flavour-engine-item-title">{flavour.title}</span>
                 <div className="flavour-engine-item-divider" />
                 <div className="flavour-engine-item-compatibility">
@@ -89,7 +98,6 @@ function FlavourEngine() {
                   <div className="flavour-engine-item-compatibility-bar">
                     <span
                       className="flavour-engine-item-compatibility-fill"
-                    //   style={{ width: `%` }}
                     />
                   </div>
                   <span className="flavour-engine-item-compatibility-value">%</span>
@@ -101,6 +109,11 @@ function FlavourEngine() {
           </article>
         ))}
       </div>
+
+      {paginatedFlavour.length < filteredFlavour.length && (
+        <button className="load-more" onClick={() => setPage(p => p + 1)}>Load more</button>
+      )}
+
     </div>
   );
 }
