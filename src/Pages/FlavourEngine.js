@@ -8,11 +8,30 @@ const getFlavourImage = (filename) => {
     return `/images/flavours/${filename}`;
 };
 
+const profileColours = {
+  'Sweet':      { color: 'rgb(245, 172, 114)', border: 'rgba(245, 172, 114, 0.4)' },
+  'Sour':       { color: 'rgb(120, 165, 130)', border: 'rgba(120, 165, 130, 0.4)' },
+  'Salty':      { color: 'rgb(100, 182, 255)', border: 'rgba(100, 182, 255, 0.4)' },
+  'Bitter':     { color: 'rgb(255, 107, 157)', border: 'rgba(255, 107, 157, 0.4)' },
+  'Umami':      { color: 'rgb(216, 150, 255)', border: 'rgba(216, 150, 255, 0.4)' },
 
-function FlavourWheel() {
+  
+};
+
+const getProfileStyle = (profile) => {
+  const colours = profileColours[profile];
+  if (!colours) return {};
+  return {
+    color: colours.color,
+    borderColor: colours.border,
+  };
+};
+
+
+function FlavourWheel({ flavours }) {
   return (
     <div className='flavour-wheel-container'>
-      
+
     </div>
   );
 }
@@ -31,8 +50,10 @@ function FlavourEngine() {
     return flavourData.filter((flavour) => {
       const titleMatch = flavour.title.toLowerCase().includes(query);
       const categoryMatch = flavour.category.toLowerCase().includes(query);
+      const profileMatch = flavour.profile.toLowerCase().includes(query);
 
-      return titleMatch || categoryMatch;
+
+      return titleMatch || categoryMatch || profileMatch ;
     });
   }, [searchTerm]);
 
@@ -52,7 +73,7 @@ function FlavourEngine() {
         <h1 className="flavour-engine-title">Flavour Engine</h1>
       </div>
 
-      <FlavourWheel />
+      <FlavourWheel flavours={filteredFlavour} />
 
       <hr className="divider" />
 
@@ -60,7 +81,7 @@ function FlavourEngine() {
         <input
           type="search"
           className="flavour-engine-search"
-          placeholder="Search by flavour or category"
+          placeholder="Search by ingredient, category or flavour..."
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
           onKeyDown={(e) => {
@@ -74,7 +95,7 @@ function FlavourEngine() {
       </div>
 
       <p className="flavour-engine-count">
-        Showing {filteredFlavour.length} flavour{filteredFlavour.length === 1 ? '' : 's'}
+        Showing {filteredFlavour.length} ingredient{filteredFlavour.length === 1 ? '' : 's'}
       </p>
 
       <div className="flavour-engine-results">
@@ -102,8 +123,8 @@ function FlavourEngine() {
                   </div>
                   <span className="flavour-engine-item-compatibility-value">%</span>
                 </div>
-                <div className="flavour-engine-item-category">                 
-                    <span className="flavour-engine-category-tag">{flavour.category}</span>
+                <div className="flavour-engine-item-profile">                 
+                    <span className="flavour-engine-profile-tag" style={getProfileStyle(flavour.profile)}>{flavour.profile}</span>
                 </div>
              </div>
           </article>

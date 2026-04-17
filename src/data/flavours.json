@@ -3,606 +3,715 @@
         "id": 1, 
         "title": "Lemon", 
         "image": "lemon.jpg", 
-        "category": "Citrus"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 2, 
         "title": "Lime", 
         "image": "lime.jpg", 
-        "category": "Citrus"
+        "category": "Fruit",
+        "profile": "Sour"
+
     },
     {
         "id": 3, 
         "title": "Orange", 
         "image": "orange.jpg", 
-        "category": "Citrus"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 4, 
         "title": "Grapefruit", 
         "image": "grapefruit.jpg", 
-        "category": "Citrus"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 5, 
         "title": "Yuzu", 
         "image": "yuzu.jpg", 
-        "category": "Citrus"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 6, 
         "title": "Bergamot", 
         "image": "bergamot.jpg", 
-        "category": "Citrus"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 7, 
         "title": "Mandarin", 
         "image": "mandarin.jpg", 
-        "category": "Citrus"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 8, 
         "title": "Blood Orange", 
         "image": "blood-orange.jpg", 
-        "category": "Citrus"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 9, 
         "title": "Mustard Seed", 
         "image": "mustard-seed.jpg", 
-        "category": "Spice"
+        "category": "Spice",
+        "profile": "Bitter"
     },
     {
         "id": 10, 
         "title": "Pomegranate", 
         "image": "pomegranate.jpg", 
-        "category": "Citrus"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 11, 
         "title": "Apple", 
         "image": "apple.jpg", 
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 12, 
         "title": "Pear", 
         "image": "pear.jpg", 
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 13, 
         "title": "Peach", 
         "image": "peach.jpg", 
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 14, 
         "title": "Apricot", 
         "image": "apricot.jpg", 
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 15, 
         "title": "Plum", 
         "image": "plum.jpg", 
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 16, 
         "title": "Cherry", 
         "image": "cherry.jpg", 
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 17, 
         "title": "Nectarine", 
         "image": "nectarine.jpg", 
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 18, 
         "title": "Quince", 
         "image": "quince.jpg", 
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 19, 
         "title": "Fig", 
         "image": "fig.jpg", 
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 20, 
         "title": "Date", 
         "image": "date.jpg", 
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 21, 
         "title": "Pineapple", 
         "image": "pineapple.jpg", 
-        "category": "Tropical Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 22, 
         "title": "Mango", 
         "image": "mango.jpg", 
-        "category": "Tropical Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 23, 
         "title": "Coconut", 
         "image": "coconut.jpg", 
-        "category": "Tropical Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 24, 
         "title": "Passion Fruit", 
         "image": "passion-fruit.jpg", 
-        "category": "Tropical Fruit"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 25, 
         "title": "Guava", 
         "image": "guava.jpg", 
-        "category": "Tropical Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 26, 
         "title": "Papaya", 
         "image": "papaya.jpg", 
-        "category": "Tropical Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 27, 
         "title": "Lychee", 
         "image": "lychee.jpg", 
-        "category": "Tropical Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 28, 
         "title": "Banana", 
         "image": "banana.jpg", 
-        "category": "Tropical Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 29, 
         "title": "Jackfruit", 
         "image": "jackfruit.jpg", 
-        "category": "Tropical Fruit"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 30, 
         "title": "Starfruit", 
         "image": "starfruit.jpg", 
-        "category": "Tropical Fruit"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 31, 
         "title": "Strawberry", 
         "image": "strawberry.jpg", 
-        "category": "Berry"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 32, 
         "title": "Raspberry", 
         "image": "raspberry.jpg", 
-        "category": "Berry"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 33, 
         "title": "Blackberry", 
         "image": "blackberry.jpg", 
-        "category": "Berry"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 34, 
         "title": "Blueberry", 
         "image": "blueberry.jpg", 
-        "category": "Berry"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 35, 
         "title": "Blackcurrant", 
         "image": "blackcurrant.jpg", 
-        "category": "Berry"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 36, 
         "title": "Redcurrant", 
         "image": "redcurrant.jpg", 
-        "category": "Berry"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 37, 
         "title": "Cranberry", 
         "image": "cranberry.jpg", 
-        "category": "Berry"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 38, 
         "title": "Elderberry", 
         "image": "elderberry.jpg", 
-        "category": "Berry"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 39, 
         "title": "Gooseberry", 
         "image": "gooseberry.jpg", 
-        "category": "Berry"
+        "category": "Fruit",
+        "profile": "Sour"
     },
     {
         "id": 40, 
         "title": "Açaí", 
         "image": "acai.jpg", 
-        "category": "Berry"
+        "category": "Fruit",
+        "profile": "Sweet"
     },
     {
         "id": 41, 
         "title": "Rose", 
         "image": "rose.jpg", 
-        "category": "Floral"
+        "category": "Flower",
+        "profile": "Sweet"
     },
     {
         "id": 42, 
         "title": "Violet", 
         "image": "violet.jpg", 
-        "category": "Floral"
+        "category": "Flower",
+        "profile": "Sweet"
     },
     {
         "id": 43, 
         "title": "Lavender", 
         "image": "lavender.jpg", 
-        "category": "Floral"
+        "category": "Flower",
+        "profile": "Sweet"
     },
     {
         "id": 44, 
         "title": "Elderflower", 
         "image": "elderflower.jpg", 
-        "category": "Floral"
+        "category": "Flower",
+        "profile": "Sweet"
     },
     {
         "id": 45, 
         "title": "Jasmine", 
         "image": "jasmine.jpg", 
-        "category": "Floral"
+        "category": "Flower",
+        "profile": "Sweet"
     },
     {
         "id": 46, 
         "title": "Hibiscus", 
         "image": "hibiscus.jpg", 
-        "category": "Floral"
+        "category": "Flower",
+        "profile": "Sour"
     },
     {
         "id": 47, 
         "title": "Orange Blossom", 
         "image": "orange-blossom.jpg", 
-        "category": "Floral"
+        "category": "Flower",
+        "profile": "Sweet"
     },
     {
         "id": 48, 
         "title": "Chamomile", 
         "image": "chamomile.jpg", 
-        "category": "Floral"
+        "category": "Flower",
+        "profile": "Sweet"
     },
     {
         "id": 49, 
         "title": "Geranium", 
         "image": "geranium.jpg", 
-        "category": "Floral"
+        "category": "Flower",
+        "profile": "Sweet"
     },
     {
         "id": 50, 
         "title": "Honeysuckle", 
         "image": "honeysuckle.jpg", 
-        "category": "Floral"
+        "category": "Flower",
+        "profile": "Sweet"
     },
     {
         "id": 51, 
         "title": "Mint", 
         "image": "mint.jpg", 
-        "category": "Herbal"
+        "category": "Herb",
+        "profile": "Sweet"
     },
     {
         "id": 52, 
         "title": "Basil", 
         "image": "basil.jpg", 
-        "category": "Herbal"
+        "category": "Herb",
+        "profile": "Bitter"
     },
     {
         "id": 53, 
         "title": "Thyme", 
         "image": "thyme.jpg", 
-        "category": "Herbal"
+        "category": "Herb",
+        "profile": "Bitter"
     },
     {
         "id": 54, 
         "title": "Rosemary", 
         "image": "rosemary.jpg", 
-        "category": "Herbal"
+        "category": "Herb",
+        "profile": "Bitter"
     },
     {
         "id": 55, 
         "title": "Sage", 
         "image": "sage.jpg", 
-        "category": "Herbal"
+        "category": "Herb",
+        "profile": "Bitter"
     },
     {
         "id": 56, 
         "title": "Tarragon", 
         "image": "tarragon.jpg", 
-        "category": "Herbal"
+        "category": "Herb",
+        "profile": "Bitter"
     },
     {
         "id": 57, 
         "title": "Dill", 
         "image": "dill.jpg", 
-        "category": "Herbal"
+        "category": "Herb",
+        "profile": "Bitter"
     },
     {
         "id": 58, 
         "title": "Lemongrass", 
         "image": "lemongrass.jpg", 
-        "category": "Herbal"
+        "category": "Herb",
+        "profile": "Sour"
     },
     {
         "id": 59, 
         "title": "Verbena", 
         "image": "verbena.jpg", 
-        "category": "Herbal"
+        "category": "Herb",
+        "profile": "Sweet"
     },
     {
         "id": 60, 
         "title": "Matcha", 
         "image": "matcha.jpg", 
-        "category": "Herbal"
+        "category": "Herb",
+        "profile": "Bitter"
     },
     {
         "id": 61, 
         "title": "Cucumber", 
         "image": "cucumber.jpg", 
-        "category": "Vegetal"
+        "category": "Vegetable",
+        "profile": "Sweet"
     },
     {
         "id": 62, 
         "title": "Celery", 
         "image": "celery.jpg", 
-        "category": "Vegetal"
+        "category": "Vegetable",
+        "profile": "Umami"
     },
     {
         "id": 63, 
         "title": "Bell Pepper", 
         "image": "bell-pepper.jpg", 
-        "category": "Vegetal"
+        "category": "Vegetable",
+        "profile": "Umami"
     },
     {
         "id": 64, 
         "title": "Tomato", 
         "image": "tomato.jpg", 
-        "category": "Vegetal"
+        "category": "Vegetable",
+        "profile": "Umami"
     },
     {
         "id": 65, 
         "title": "Beetroot", 
         "image": "beetroot.jpg", 
-        "category": "Vegetal"
+        "category": "Vegetable",
+        "profile": "Umami"
     },
     {
         "id": 66, 
         "title": "Carrot", 
         "image": "carrot.jpg", 
-        "category": "Vegetal"
+        "category": "Vegetable",
+        "profile": "Sweet"
     },
     {
         "id": 67, 
         "title": "Fennel", 
         "image": "fennel.jpg", 
-        "category": "Vegetal"
+        "category": "Vegetable",
+        "profile": "Sweet"
     },
     {
         "id": 68, 
         "title": "Pea", 
         "image": "pea.jpg", 
-        "category": "Vegetal"
+        "category": "Vegetable",
+        "profile": "Sweet"
     },
     {
         "id": 69, 
         "title": "Artichoke", 
         "image": "artichoke.jpg", 
-        "category": "Vegetal"
+        "category": "Vegetable",
+        "profile": "Umami"
     },
     {
         "id": 70, 
         "title": "Asparagus", 
         "image": "asparagus.jpg", 
-        "category": "Vegetal"
+        "category": "Vegetable",
+        "profile": "Umami"
     },
     {
         "id": 71, 
         "title": "Ginger", 
         "image": "ginger.jpg", 
-        "category": "Spice"
+        "category": "Vegetable",
+        "profile": "Sour"
     },
     {
         "id": 72, 
         "title": "Cinnamon", 
         "image": "cinnamon.jpg", 
-        "category": "Spice"
+        "category": "Spice",
+        "profile": "Sweet"
     },
     {
         "id": 73, 
         "title": "Clove", 
         "image": "clove.jpg", 
-        "category": "Spice"
+        "category": "Spice",
+        "profile": "Bitter"
     },
     {
         "id": 74, 
         "title": "Nutmeg", 
         "image": "nutmeg.jpg", 
-        "category": "Spice"
+        "category": "Nut",
+        "profile": "Sweet"
     },
     {
         "id": 75, 
         "title": "Cardamom", 
         "image": "cardamom.jpg", 
-        "category": "Spice"
+        "category": "Spice",
+        "profile": "Sweet"
     },
     {
         "id": 76, 
         "title": "Black Pepper", 
         "image": "black-pepper.jpg", 
-        "category": "Spice"
+        "category": "Spice",
+        "profile": "Bitter"
     },
     {
         "id": 77, 
         "title": "Star Anise", 
         "image": "star-anise.jpg", 
-        "category": "Spice"
+        "category": "Spice",
+        "profile": "Sweet"
     },
     {
         "id": 78, 
         "title": "Allspice", 
         "image": "allspice.jpg", 
-        "category": "Spice"
+        "category": "Spice",
+        "profile": "Bitter"
     },
     {
         "id": 79, 
         "title": "Vanilla", 
         "image": "vanilla.jpg", 
-        "category": "Spice"
+        "category": "Spice",
+        "profile": "Sweet"
     },
     {
         "id": 80, 
         "title": "Chilli", 
         "image": "chilli.jpg", 
-        "category": "Spice"
+        "category": "Fruit",
+        "profile": "Bitter"
     },
     {
         "id": 81, 
         "title": "Oak", 
         "image": "oak.jpg", 
-        "category": "Earthy"
+        "category": "Tree",
+        "profile": "Bitter"
     },
     {
         "id": 82, 
         "title": "Sandalwood", 
         "image": "sandalwood.jpg", 
-        "category": "Earthy"
+        "category": "Tree",
+        "profile": "Bitter"
     },
     {
         "id": 83, 
         "title": "Cedar", 
         "image": "cedar.jpg", 
-        "category": "Earthy"
+        "category": "Tree",
+        "profile": "Bitter"
     },
     {
         "id": 84, 
         "title": "Tobacco", 
         "image": "tobacco.jpg", 
-        "category": "Earthy"
+        "category": "Tree",
+        "profile": "Bitter"
     },
     {
         "id": 85, 
         "title": "Mushroom", 
         "image": "mushroom.jpg", 
-        "category": "Earthy"
+        "category": "Mushroom",
+        "profile": "Umami"
     },
     {
         "id": 86, 
         "title": "Walnut", 
         "image": "walnut.jpg", 
-        "category": "Earthy"
+        "category": "Earthy",
+        "profile": "Bitter"
     },
     {
         "id": 87, 
         "title": "Hazelnut", 
         "image": "hazelnut.jpg", 
-        "category": "Earthy"
+        "category": "Nut",
+        "profile": "Sweet"
     },
     {
         "id": 88, 
         "title": "Almond", 
         "image": "almond.jpg", 
-        "category": "Earthy"
+        "category": "Nut",
+        "profile": "Sweet"
     },
     {
         "id": 89, 
         "title": "Pecan", 
         "image": "pecan.jpg", 
-        "category": "Earthy"
+        "category": "Nut",
+        "profile": "Sweet"
     },
     {
         "id": 90, 
         "title": "Pine", 
         "image": "pine.jpg", 
-        "category": "Earthy"
+        "category": "Tree",
+        "profile": "Bitter"
     },
     {
         "id": 91, 
         "title": "Caramel", 
         "image": "caramel.jpg", 
-        "category": "Sweet"
+        "category": "Sweet",
+        "profile": "Sweet"
     },
     {
         "id": 92, 
         "title": "Toffee", 
         "image": "toffee.jpg", 
-        "category": "Sweet"
+        "category": "Sweet",
+        "profile": "Sweet"
     },
     {
         "id": 93, 
         "title": "Honey", 
         "image": "honey.jpg", 
-        "category": "Sweet"
+        "category": "Sweet",
+        "profile": "Sweet"
     },
     {
         "id": 94, 
         "title": "Molasses", 
         "image": "molasses.jpg", 
-        "category": "Sweet"
+        "category": "Sweet",
+        "profile": "Sweet"
     },
     {
         "id": 95, 
         "title": "Maple", 
         "image": "maple.jpg", 
-        "category": "Sweet"
+        "category": "Sweet",
+        "profile": "Sweet"
     },
     {
         "id": 96, 
         "title": "Chocolate", 
         "image": "chocolate.jpg", 
-        "category": "Sweet"
+        "category": "Sweet",
+        "profile": "Bitter"
     },
     {
         "id": 97, 
         "title": "Coffee", 
         "image": "coffee.jpg", 
-        "category": "Sweet"
+        "category": "Sweet",
+        "profile": "Bitter"
     },
     {
         "id": 98, 
         "title": "Marzipan", 
         "image": "marzipan.jpg", 
-        "category": "Sweet"
+        "category": "Sweet",
+        "profile": "Sweet"
     },
     {
         "id": 99, 
         "title": "Butterscotch", 
         "image": "butterscotch.jpg", 
-        "category": "Sweet"
+        "category": "Sweet",
+        "profile": "Sweet"
     },
     {
         "id": 100, 
         "title": "Brown Sugar", 
         "image": "brown-sugar.jpg", 
-        "category": "Sweet"
+        "category": "Sweet",
+        "profile": "Sweet"
     },
     {
         "id": 101,
         "title": "Olive",
         "image": "olive.jpg",
-        "category": "Tree Fruit"
+        "category": "Fruit",
+        "profile": "Salty"
+    },
+    {
+        "id": 102,
+        "title": "Anchovy",
+        "image": "anchovy.jpg",
+        "category": "Fish",
+        "profile": "Salty"
     }
 ]

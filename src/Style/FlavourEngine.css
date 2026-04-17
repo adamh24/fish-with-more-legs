@@ -74,7 +74,7 @@
 
 .flavour-engine-item {
     position: relative;
-    width: 100%;
+    max-width: 250px;
     aspect-ratio: 1 / 1;
     box-sizing: border-box;
     border: 1px solid rgba(82, 183, 136, 0.14);
@@ -180,7 +180,7 @@
 
 .flavour-engine-item-compatibility-label,
 .flavour-engine-item-compatibility-value,
-.flavour-engine-category-tag {
+.flavour-engine-profile-tag {
     font-family: 'DM Mono', monospace;
     font-size: 0.72rem;
     color: rgb(101, 119, 111);
@@ -211,13 +211,13 @@
     );
 }
 
-.flavour-engine-item-category {
+.flavour-engine-item-profile {
     display: flex;
     flex-wrap: wrap;
     gap: 6px;
 }
 
-.flavour-engine-category-tag {
+.flavour-engine-profile-tag {
     background: rgba(85, 111, 68, 0.14);
     border: 1px solid rgba(85, 111, 68, 0.28);
     padding: 2px 9px;
@@ -246,17 +246,10 @@
 
 .flavour-wheel-container {
     width: 100%;
-    aspect-ratio: 2/1;
+    min-height: 220px;
     border: 1px solid rgba(82, 183, 136, 0.14);
     margin-bottom: 20px;
     margin-inline: 6%;
-}
-
-/* Dividing Line*/
-
-.divider {
-    width: 100%;
-    border: none;
-    border-top: 1px solid rgba(82, 183, 136, 0.14);
-    margin-bottom: 20px
+    background: rgba(6, 10, 7, 0.38);
+    overflow: hidden;
 }

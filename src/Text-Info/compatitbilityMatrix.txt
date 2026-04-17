@@ -1,0 +1,124 @@
+Compatibility Matrix Breakdown:
+
+**profile-to-profile base matrix (5x5)**
+
+Compatibility Scoring:
+
+Weights:
+
+- Profile = 0.55
+- Category = 0.15
+- Strength = 0.15
+- Acid = 0.15
+_____________________________________________________________________________________________________________________
+
+Profile Similarity Score: 
+
+- Sweet-Sour: 0.90
+- Sweet-Salty: 0.80
+- Sweet-Bitter: 0.75
+- Sweet-Umami: 0.55
+- Sour-Salty: 0.50
+- Sour-Bitter: 0.35
+- Sour-Umami: 0.70
+- Salty-Bitter: 0.50
+- Salty-Umami: 0.90
+- Bitter-Umami: 0.60
+- Same-with-same:
+    Sweet 0.80 
+    Sour 0.50 
+    Salty 0.70 
+    Bitter 0.35 
+    Umami 0.85
+_____________________________________________________________________________________________________________________
+
+Category Pairing Table:
+
+_____________________________________________________________________________________________________________________
+
+Strength Compatibility Score (low - neutral - high):
+
+low-
+low-low: 0.5
+low-neutral: 1
+low-high: 0
+neutral-neutral: 0.5
+neutral-high: 1
+high-high: 0.5
+_____________________________________________________________________________________________________________________
+
+Acid Compatibility Score:
+
+Citric: 
+
+Acetic
+
+Lactic
+
+Malic
+
+Tartaric
+
+
+
+**ingredient-level signals**
+
+For each pair of flavours i, j, compute:
+
+C(i, j) = 100 x clamp(W_p ⋅ S_profile + W_c ⋅ S_category + W_s ⋅ S_strength + W_a ⋅ S_acid, 0,1)  
+
+C(i, j) = compatibility between flavour i and j (as a %)
+
+W_p = weight of profile 
+W_c = weight of category
+W_s = weight of strength
+W_a = weight of acid
+
+S_profile = similarity score between flavour profiles
+S_category = similarity score between categories
+S_strength = intesity compatibility score
+S_acid = acid compatibility score 
+
+
+
+
+
+Signals:
+- `S_profile`: from the 5x5 matrix above
+- `S_category`: simple category pairing table (Fruit-Herb high, Fruit-Tree medium, Flower-Mushroom low, etc.)
+- `S_recipe-cooccur`: from real co-occurrence in your recipes/cocktails data (PMI or normalized counts)
+- `S_tag-overlap`: optional tags like citrus, floral, earthy, creamy
+
+**3. Compute a full NxN matrix**
+If you have $N$ flavours:
+- Create an $N \times N$ matrix
+- Diagonal is 100 (self-compatibility)
+- Enforce symmetry: $C_{ij} = C_{ji}$ by averaging both directions if needed
+- Save as:
+`{ flavourId: { otherFlavourId: score } }` or a 2D array for faster lookup
+
+**4. Normalize and bucket for UX**
+Convert score to labels:
+- 80-100: Excellent
+- 60-79: Good
+- 40-59: Experimental
+- 0-39: Low
+
+This gives you both a number and human-readable guidance.
+
+**5. Render as a heatmap + pair explorer**
+- Rows/columns = flavour names
+- Cell color = compatibility score
+- Click a cell to show “why” breakdown (profile, category, recipe evidence)
+- Add sorting/filtering by profile or category
+
+**6. Improve over time with feedback**
+When users like/dislike pairings:
+- Store feedback as +1/-1
+- Update scores incrementally:
+$C'_{ij} = (1-\alpha)C_{ij} + \alpha F_{ij}$
+with small $\alpha$ (e.g. 0.1)
+
+This turns it from static rules into a learning system.
+
+If you want, I can implement a first pass directly in your app: seed matrix + pairwise calculator + compatibility heatmap-ready output.
