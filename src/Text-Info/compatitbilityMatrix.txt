@@ -1,6 +1,6 @@
 Compatibility Matrix Breakdown:
 
-**profile-to-profile base matrix (5x5)**
+**varible scoring**
 
 Compatibility Scoring:
 
@@ -12,7 +12,7 @@ Weights:
 - Acid = 0.15
 _____________________________________________________________________________________________________________________
 
-Profile Similarity Score: 
+Profile Matrix: 
 
 - Sweet-Sour: 0.90
 - Sweet-Salty: 0.80
@@ -32,13 +32,101 @@ Profile Similarity Score:
     Umami 0.85
 _____________________________________________________________________________________________________________________
 
-Category Pairing Table:
+Category Matrix:
 
+Fruit - Fruit: 0.7
+        Vegetable: 0.55 
+        Dairy: 0.75
+        Meat & Fish: 0.5
+        Herb: 0.6
+        Spice: 0.55
+        Ferment & Pickel: 0.65
+        Grain & Nut: 0.6
+        Flower: 0.75
+        Mushroom: 0.45
+        Sweet: 0.85
+        Tree: 0.4
+
+Vegetable - Vegetable: 0.75
+            Dairy: 0.65
+            Meat & Fish: 0.7
+            Herb: 0.8
+            Spice: 0.65
+            Ferment & Pickel: 0.7
+            Grain & Nut: 0.7
+            Flower: 0.6
+            Mushroom: 0.75
+            Sweet: 0.5
+            Tree: 0.45
+
+Dairy - Dairy: 0.6
+        Meat & Fish: 0.65
+        Herb: 0.7
+        Spice: 0.6
+        Ferment & Pickel: 0.7
+        Grain & Nut: 0.65
+        Flower: 0.65
+        Mushroom: 0.6
+        Sweet: 0.8
+        Tree: 0.45
+
+Meat & Fish - Meat & Fish: 0.7
+              Herb: 0.8
+              Spice: 0.8
+              Ferment & Pickel: 0.65
+              Grain & Nut: 0.6
+              Flower: 0.4
+              Mushroom: 0.7
+              Sweet: 0.45
+              Tree:
+
+Herb - Herb: 0.55
+       Spice: 0.7
+       Ferment & Pickel: 0.65
+       Grain & Nut: 0.6
+       Flower: 0.75
+       Mushroom: 0.7
+       Sweet: 0.5
+       Tree: 0.55
+
+Spice - Spice: 0.55
+        Ferment & Pickel: 0.6
+        Grain & Nut: 0.65
+        Flower: 0.55
+        Mushroom: 0.65
+        Sweet: 0.7
+        Tree: 0.65
+
+Ferment & Pickel - Ferment & Pickel: 0.6
+                   Grain & Nut: 0.6
+                   Flower: 0.45
+                   Mushroom: 0.75
+                   Sweet: 0.5
+                   Tree: 0.5
+
+Grain & Nut - Grain & Nut: 0.65
+              Flower: 0.55
+              Mushroom: 0.6
+              Sweet: 0.7
+              Tree: 0.55
+
+Flower - Flower: 0.55
+         Mushroom: 0.4
+         Sweet: 0.8
+         Tree: 0.65
+
+Mushroom - Mushroom: 0.7
+           Sweet: 0.4
+           Tree: 0.65
+
+Sweet - Sweet: 0.7
+        Tree: 0.55
+
+Tree - Tree: 0.6
 _____________________________________________________________________________________________________________________
 
 Strength Compatibility Score (low - neutral - high):
 
-low-
 low-low: 0.5
 low-neutral: 1
 low-high: 0
@@ -47,18 +135,28 @@ neutral-high: 1
 high-high: 0.5
 _____________________________________________________________________________________________________________________
 
-Acid Compatibility Score:
+Acid Matrix:
 
-Citric: 
+Citric - Citric: 1
+         Acetic: 0.4
+         Lactic: 0.6
+         Malic: 0.85
+         Tartaric: 0.75
 
-Acetic
+Acetic - Acetic: 1
+         Lactic: 0.65
+         Malic: 0.45
+         Tartaric: 0.35
 
-Lactic
+Lactic - Lactic: 1
+         Malic: 0.65
+         Tartaric: 0.55
 
-Malic
+Malic - Malic: 1
+        Tartaric: 0.8
 
-Tartaric
-
+Tartaric - Tartaric: 1
+_____________________________________________________________________________________________________________________
 
 
 **ingredient-level signals**
@@ -69,6 +167,7 @@ C(i, j) = 100 x clamp(W_p ⋅ S_profile + W_c ⋅ S_category + W_s ⋅ S_strengt
 
 C(i, j) = compatibility between flavour i and j (as a %)
 
+Signals
 W_p = weight of profile 
 W_c = weight of category
 W_s = weight of strength
@@ -80,18 +179,12 @@ S_strength = intesity compatibility score
 S_acid = acid compatibility score 
 
 
+**3. render compatibility score**
+Render percentage along with visual
 
 
-
-Signals:
-- `S_profile`: from the 5x5 matrix above
-- `S_category`: simple category pairing table (Fruit-Herb high, Fruit-Tree medium, Flower-Mushroom low, etc.)
-- `S_recipe-cooccur`: from real co-occurrence in your recipes/cocktails data (PMI or normalized counts)
-- `S_tag-overlap`: optional tags like citrus, floral, earthy, creamy
-
-**3. Compute a full NxN matrix**
-If you have $N$ flavours:
-- Create an $N \times N$ matrix
+If you have N flavours:
+- Create an NxN matrix
 - Diagonal is 100 (self-compatibility)
 - Enforce symmetry: $C_{ij} = C_{ji}$ by averaging both directions if needed
 - Save as:

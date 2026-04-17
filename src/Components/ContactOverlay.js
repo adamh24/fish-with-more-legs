@@ -54,8 +54,8 @@ function ContactOverlay({ onClose, closing }) {
           <a className="contact-row">
             <span className="contact-label">Instagram</span>
             <div className="contact-info-set">
-              <a className="contact-value"  href="https://instagram.com/fishwithlegs" target="_blank" rel="noreferrer">@fishwithlegs</a>
-              <CopyButton text="@fishwithlegs" />
+              <a className="contact-value"  href="https://instagram.com/fishwithlegs.co.uk" target="_blank" rel="noreferrer">@fishwithlegs.co.uk</a>
+              <CopyButton text="@fishwithlegs.co.uk" />
             </div>
           </a>
 

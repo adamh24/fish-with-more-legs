@@ -1,5 +1,5 @@
 import '../Style/About.css';
-import aboutData from '../data/about.json';
+import aboutData from '../Data/about.json';
 
 const { team, values } = aboutData;
 const teamWithoutFounder = team.filter(member => !/founder/i.test(member.role));
