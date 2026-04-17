@@ -1,6 +1,9 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import flavourData from '../data/flavours.json';
 import '../Style/FlavourEngine.css';
+
+const MIN_CARD_WIDTH = 220;
+const GRID_GAP = 20;
 
 
 const getFlavourImage = (filename) => {
@@ -13,9 +16,7 @@ const profileColours = {
   'Sour':       { color: 'rgb(120, 165, 130)', border: 'rgba(120, 165, 130, 0.4)' },
   'Salty':      { color: 'rgb(100, 182, 255)', border: 'rgba(100, 182, 255, 0.4)' },
   'Bitter':     { color: 'rgb(255, 107, 157)', border: 'rgba(255, 107, 157, 0.4)' },
-  'Umami':      { color: 'rgb(216, 150, 255)', border: 'rgba(216, 150, 255, 0.4)' },
-
-  
+  'Umami':      { color: 'rgb(216, 150, 255)', border: 'rgba(216, 150, 255, 0.4)' },  
 };
 
 const getProfileStyle = (profile) => {
@@ -39,6 +40,8 @@ function FlavourWheel({ flavours }) {
 
 function FlavourEngine() {
   const [searchTerm, setSearchTerm] = useState('');
+  const resultsRef = useRef(null);
+  const [columnsPerRow, setColumnsPerRow] = useState(1);
 
   const filteredFlavour = useMemo(() => {
     const query = searchTerm.trim().toLowerCase();
@@ -64,6 +67,34 @@ function FlavourEngine() {
   const paginatedFlavour = useMemo(() => {
     return filteredFlavour.slice(0, page * PAGE_SIZE);
   }, [filteredFlavour, page]);
+
+  useEffect(() => {
+    const resultsNode = resultsRef.current;
+
+    if (!resultsNode) {
+      return undefined;
+    }
+
+    const updateColumnsPerRow = () => {
+      const nextColumns = Math.max(
+        1,
+        Math.floor((resultsNode.clientWidth + GRID_GAP) / (MIN_CARD_WIDTH + GRID_GAP))
+      );
+
+      setColumnsPerRow(nextColumns);
+    };
+
+    updateColumnsPerRow();
+
+    const resizeObserver = new ResizeObserver(updateColumnsPerRow);
+    resizeObserver.observe(resultsNode);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  const isSingleRow = paginatedFlavour.length > 0 && paginatedFlavour.length <= columnsPerRow;
 
 
   return (
@@ -92,13 +123,26 @@ function FlavourEngine() {
           }}
           aria-label="Search flavour"
         />
+        {searchTerm && (
+          <button
+            type="button"
+            className="flavour-engine-search-clear"
+            onClick={() => setSearchTerm('')}
+            aria-label="Clear search"
+          >
+            <span aria-hidden="true">x</span>
+          </button>
+        )}
       </div>
 
       <p className="flavour-engine-count">
         Showing {filteredFlavour.length} ingredient{filteredFlavour.length === 1 ? '' : 's'}
       </p>
 
-      <div className="flavour-engine-results">
+      <div
+        ref={resultsRef}
+        className={`flavour-engine-results${isSingleRow ? ' flavour-engine-results--single-row' : ''}`}
+      >
         {paginatedFlavour.map((flavour) => (
           <article className="flavour-engine-item" key={flavour.id}>
               <img className="flavour-engine-item-image" 
