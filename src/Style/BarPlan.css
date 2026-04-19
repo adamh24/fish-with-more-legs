@@ -1,0 +1,483 @@
+.bar-plan {
+  min-height: 100vh;
+  background-color: rgb(6, 10, 7);
+  color: rgb(184, 228, 204);
+  font-family: 'DM Mono', monospace;
+  padding: 120px 2rem 4rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.bp-header {
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+.bp-header h1 {
+  font-family: 'Antonio', sans-serif;
+  font-size: 2.5rem;
+  color: rgb(82, 183, 136);
+  margin-bottom: 0.5rem;
+}
+
+.bp-header p {
+  color: rgb(101, 119, 111);
+  font-size: 0.95rem;
+}
+
+/* Tabs */
+.bp-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.bp-tab-btn {
+  background: transparent;
+  border: 1px solid rgba(82, 183, 136, 0.2);
+  color: rgb(101, 119, 111);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.8rem;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bp-tab-btn:hover {
+  border-color: rgb(82, 183, 136);
+  color: rgb(82, 183, 136);
+}
+
+.bp-tab-btn.active {
+  border-color: rgb(82, 183, 136);
+  color: rgb(6, 10, 7);
+  background: rgb(82, 183, 136);
+}
+
+/* Progress bar */
+.bp-progress-bar {
+  width: 100%;
+  height: 2px;
+  background: rgba(82, 183, 136, 0.15);
+  margin-bottom: 2rem;
+}
+
+.bp-progress-fill {
+  height: 100%;
+  background: rgb(82, 183, 136);
+  transition: width 0.4s ease;
+}
+
+/* Phase panel */
+.bp-phase-header {
+  margin-bottom: 2rem;
+}
+
+.bp-phase-label {
+  font-size: 0.8rem;
+  color: rgb(101, 119, 111);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+
+.bp-phase-title {
+  font-family: 'Antonio', sans-serif;
+  font-size: 2rem;
+  color: rgb(82, 183, 136);
+  margin-bottom: 0.5rem;
+}
+
+.bp-phase-summary {
+  color: rgb(184, 228, 204);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Step cards */
+.bp-steps-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.bp-step-card {
+  border: 1px solid rgba(82, 183, 136, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.bp-step-card:hover,
+.bp-step-card.open {
+  border-color: rgba(82, 183, 136, 0.4);
+}
+
+.bp-step-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.bp-step-num {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.bp-step-meta {
+  flex: 1;
+}
+
+.bp-step-title {
+  font-size: 0.95rem;
+  color: rgb(184, 228, 204);
+  font-weight: 600;
+}
+
+.bp-step-subtitle {
+  font-size: 0.8rem;
+  color: rgb(101, 119, 111);
+  margin-top: 0.2rem;
+}
+
+.bp-step-toggle {
+  font-size: 1.2rem;
+  color: rgb(101, 119, 111);
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.bp-step-toggle.open {
+  transform: rotate(180deg);
+}
+
+.bp-step-body {
+  padding: 0 1.25rem 1.25rem 1.25rem;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgb(184, 228, 204);
+  border-top: 1px solid rgba(82, 183, 136, 0.1);
+}
+
+.bp-step-body ul {
+  margin: 0.75rem 0;
+  padding-left: 1.2rem;
+}
+
+.bp-step-body li {
+  margin-bottom: 0.5rem;
+}
+
+.bp-step-body strong {
+  color: rgb(82, 183, 136);
+}
+
+/* Callouts */
+.bp-step-body .callout {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  border-left: 3px solid;
+}
+
+.bp-step-body .callout.tip {
+  border-color: rgb(82, 183, 136);
+  background: rgba(82, 183, 136, 0.05);
+  color: rgb(184, 228, 204);
+}
+
+.bp-step-body .callout.warn {
+  border-color: rgb(245, 172, 114);
+  background: rgba(245, 172, 114, 0.05);
+  color: rgb(245, 172, 114);
+}
+
+.bp-step-body .callout.cost {
+  border-color: rgb(101, 119, 111);
+  background: rgba(101, 119, 111, 0.05);
+  color: rgb(184, 228, 204);
+}
+
+/* Nav row */
+.bp-nav-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.bp-nav-btn {
+  background: transparent;
+  border: 1px solid rgba(82, 183, 136, 0.3);
+  color: rgb(82, 183, 136);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  padding: 0.7rem 1.25rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.2s ease;
+}
+
+.bp-nav-btn:hover:not(:disabled) {
+  background: rgb(82, 183, 136);
+  color: rgb(6, 10, 7);
+}
+
+.bp-nav-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+@media (max-width: 600px) {
+  .bar-plan {
+    padding: 100px 1rem 3rem;
+  }
+
+  .bp-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .bp-tabs {
+    gap: 0.35rem;
+  }
+
+  .bp-tab-btn {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* ── View toggle ──────────────────────────────────────────── */
+
+.bp-view-toggle {
+  display: flex;
+  gap: 0;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(82, 183, 136, 0.25);
+  width: fit-content;
+}
+
+.bp-view-btn {
+  background: transparent;
+  border: none;
+  color: rgb(101, 119, 111);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  padding: 0.55rem 1.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: all 0.2s ease;
+}
+
+.bp-view-btn + .bp-view-btn {
+  border-left: 1px solid rgba(82, 183, 136, 0.25);
+}
+
+.bp-view-btn.active {
+  background: rgb(82, 183, 136);
+  color: rgb(6, 10, 7);
+}
+
+.bp-view-btn:not(.active):hover {
+  color: rgb(82, 183, 136);
+}
+
+/* ── Checklist view ───────────────────────────────────────── */
+
+.cl-view {
+  width: 100%;
+}
+
+.cl-overall {
+  margin-bottom: 1.5rem;
+}
+
+.cl-overall-label {
+  display: block;
+  font-size: 0.8rem;
+  color: rgb(101, 119, 111);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.cl-phase-header {
+  margin-bottom: 1.5rem;
+}
+
+.cl-phase-progress {
+  font-size: 0.8rem;
+  color: rgb(101, 119, 111);
+  margin-top: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+/* Sections */
+.cl-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.cl-section {
+  border: 1px solid rgba(82, 183, 136, 0.12);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cl-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease;
+}
+
+.cl-section-header:hover {
+  background: rgba(82, 183, 136, 0.04);
+}
+
+.cl-section-title {
+  flex: 1;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgb(82, 183, 136);
+}
+
+.cl-section-count {
+  font-size: 0.75rem;
+  color: rgb(101, 119, 111);
+}
+
+.cl-section-toggle {
+  font-size: 1rem;
+  color: rgb(101, 119, 111);
+  transition: transform 0.2s ease;
+  line-height: 1;
+}
+
+.cl-section-toggle.open {
+  transform: rotate(180deg);
+}
+
+.cl-section-body {
+  border-top: 1px solid rgba(82, 183, 136, 0.08);
+}
+
+/* Items */
+.cl-item {
+  border-bottom: 1px solid rgba(82, 183, 136, 0.06);
+  transition: background 0.15s ease;
+}
+
+.cl-item:last-child {
+  border-bottom: none;
+}
+
+.cl-item--done .cl-label {
+  color: rgb(69, 77, 75);
+  text-decoration: line-through;
+  text-decoration-color: rgba(82, 183, 136, 0.4);
+}
+
+.cl-item-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+}
+
+.cl-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(82, 183, 136, 0.4);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.15s ease;
+}
+
+.cl-checkbox--checked {
+  background: rgb(82, 183, 136);
+  border-color: rgb(82, 183, 136);
+}
+
+.cl-check-mark {
+  color: rgb(6, 10, 7);
+  font-size: 0.65rem;
+  line-height: 1;
+}
+
+.cl-label {
+  flex: 1;
+  font-size: 0.85rem;
+  color: rgb(184, 228, 204);
+  line-height: 1.4;
+}
+
+.cl-note-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid rgba(82, 183, 136, 0.2);
+  color: rgb(101, 119, 111);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: all 0.15s ease;
+}
+
+.cl-note-btn--active {
+  border-color: rgb(245, 172, 114);
+  color: rgb(245, 172, 114);
+}
+
+.cl-note-btn:hover {
+  border-color: rgb(82, 183, 136);
+  color: rgb(82, 183, 136);
+}
+
+.cl-note-textarea {
+  width: 100%;
+  background: rgba(82, 183, 136, 0.03);
+  border: none;
+  border-top: 1px solid rgba(82, 183, 136, 0.08);
+  color: rgb(184, 228, 204);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  padding: 0.6rem 1rem;
+  resize: vertical;
+  min-height: 60px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.cl-note-textarea::placeholder {
+  color: rgb(69, 77, 75);
+}

@@ -1,0 +1,77 @@
+.admin-gate {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgb(6, 10, 7);
+}
+
+.admin-gate-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(82, 183, 136, 0.2);
+  border-radius: 4px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.admin-gate-title {
+  margin-bottom: 1.5rem;
+  font-family: 'Antonio', sans-serif;
+  font-size: 2.5rem;
+  color: rgb(82, 183, 136);
+  letter-spacing: 0.05em;
+}
+
+.admin-gate-input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  background: rgb(6, 10, 7);
+  border: 1px solid rgba(82, 183, 136, 0.3);
+  color: rgb(184, 228, 204);
+  font-family: 'DM Mono', monospace;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+.admin-gate-input::placeholder {
+  color: rgb(69, 77, 75);
+}
+
+.admin-gate-input:focus {
+  border-color: rgb(82, 183, 136);
+}
+
+.admin-gate-error {
+  color: rgb(245, 172, 114);
+  margin-bottom: 0.75rem;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.admin-gate-button {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgb(82, 183, 136);
+  background: transparent;
+  color: rgb(82, 183, 136);
+  font-family: 'DM Mono', monospace;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.admin-gate-button:hover {
+  background: rgb(82, 183, 136);
+  color: rgb(6, 10, 7);
+}

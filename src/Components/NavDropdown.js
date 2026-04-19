@@ -38,9 +38,9 @@ function NavDropdown ({ onOpenContact }) {
 
         <Link
           className='dropdown-item dropdown-action'
-          to='/flavour-wheel'
+          to='/flavour-engine'
         >
-          Flavour Wheel
+          Flavour Engine
         </Link>
       </div>
     </div>

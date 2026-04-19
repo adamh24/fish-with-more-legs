@@ -9,6 +9,10 @@ import Courses from "./Pages/Courses"
 import ScrollToTop from "./Components/ScrollToTop"
 import About from './Pages/About';
 import ContactOverlay from './Components/ContactOverlay';
+import FlavourEngine from './Pages/FlavourEngine';
+import AdminGate from './Admin/AdminGate';
+import AdminPage from './Admin/AdminPage';
+import BarPlan from './Admin/BarPlan';
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -41,7 +45,10 @@ function App() {
           <Route path="/recipes" element={<Recipes />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/about" element={<About />} />
-        
+          <Route path="/flavour-engine" element={<FlavourEngine />} />
+          <Route path="/admin-gate" element={<AdminGate />} />
+          <Route path="/admin" element={<AdminPage />} />
+          <Route path="/bar-plan" element={<BarPlan />} />
         </Routes>
 
         {showContact && (

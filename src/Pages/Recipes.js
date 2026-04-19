@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import cocktailsData from '../data/cocktails.json';
-import modifiersData from '../data/modifiers.json';
+import cocktailsData from '../Data/cocktails.json';
+import modifiersData from '../Data/modifiers.json';
 import '../Style/Recipes.css';
 
 const imageContext = require.context('../Assets', false, /\.(png|jpe?g|svg)$/);

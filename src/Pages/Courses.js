@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import coursesData from '../data/courses.json';
+import coursesData from '../Data/courses.json';
 import PolicyLink from '../Components/PolicyLink';
 import '../Style/Courses.css';
 

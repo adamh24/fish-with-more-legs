@@ -1,0 +1,217 @@
+Compatibility Matrix Breakdown:
+
+**varible scoring**
+
+Compatibility Scoring:
+
+Weights:
+
+- Profile = 0.55
+- Category = 0.15
+- Strength = 0.15
+- Acid = 0.15
+_____________________________________________________________________________________________________________________
+
+Profile Matrix: 
+
+- Sweet-Sour: 0.90
+- Sweet-Salty: 0.80
+- Sweet-Bitter: 0.75
+- Sweet-Umami: 0.55
+- Sour-Salty: 0.50
+- Sour-Bitter: 0.35
+- Sour-Umami: 0.70
+- Salty-Bitter: 0.50
+- Salty-Umami: 0.90
+- Bitter-Umami: 0.60
+- Same-with-same:
+    Sweet 0.80 
+    Sour 0.50 
+    Salty 0.70 
+    Bitter 0.35 
+    Umami 0.85
+_____________________________________________________________________________________________________________________
+
+Category Matrix:
+
+Fruit - Fruit: 0.7
+        Vegetable: 0.55 
+        Dairy: 0.75
+        Meat & Fish: 0.5
+        Herb: 0.6
+        Spice: 0.55
+        Ferment & Pickel: 0.65
+        Grain & Nut: 0.6
+        Flower: 0.75
+        Mushroom: 0.45
+        Sweet: 0.85
+        Tree: 0.4
+
+Vegetable - Vegetable: 0.75
+            Dairy: 0.65
+            Meat & Fish: 0.7
+            Herb: 0.8
+            Spice: 0.65
+            Ferment & Pickel: 0.7
+            Grain & Nut: 0.7
+            Flower: 0.6
+            Mushroom: 0.75
+            Sweet: 0.5
+            Tree: 0.45
+
+Dairy - Dairy: 0.6
+        Meat & Fish: 0.65
+        Herb: 0.7
+        Spice: 0.6
+        Ferment & Pickel: 0.7
+        Grain & Nut: 0.65
+        Flower: 0.65
+        Mushroom: 0.6
+        Sweet: 0.8
+        Tree: 0.45
+
+Meat & Fish - Meat & Fish: 0.7
+              Herb: 0.8
+              Spice: 0.8
+              Ferment & Pickel: 0.65
+              Grain & Nut: 0.6
+              Flower: 0.4
+              Mushroom: 0.7
+              Sweet: 0.45
+              Tree:
+
+Herb - Herb: 0.55
+       Spice: 0.7
+       Ferment & Pickel: 0.65
+       Grain & Nut: 0.6
+       Flower: 0.75
+       Mushroom: 0.7
+       Sweet: 0.5
+       Tree: 0.55
+
+Spice - Spice: 0.55
+        Ferment & Pickel: 0.6
+        Grain & Nut: 0.65
+        Flower: 0.55
+        Mushroom: 0.65
+        Sweet: 0.7
+        Tree: 0.65
+
+Ferment & Pickel - Ferment & Pickel: 0.6
+                   Grain & Nut: 0.6
+                   Flower: 0.45
+                   Mushroom: 0.75
+                   Sweet: 0.5
+                   Tree: 0.5
+
+Grain & Nut - Grain & Nut: 0.65
+              Flower: 0.55
+              Mushroom: 0.6
+              Sweet: 0.7
+              Tree: 0.55
+
+Flower - Flower: 0.55
+         Mushroom: 0.4
+         Sweet: 0.8
+         Tree: 0.65
+
+Mushroom - Mushroom: 0.7
+           Sweet: 0.4
+           Tree: 0.65
+
+Sweet - Sweet: 0.7
+        Tree: 0.55
+
+Tree - Tree: 0.6
+_____________________________________________________________________________________________________________________
+
+Strength Compatibility Score (low - neutral - high):
+
+low-low: 0.5
+low-neutral: 1
+low-high: 0
+neutral-neutral: 0.5
+neutral-high: 1
+high-high: 0.5
+_____________________________________________________________________________________________________________________
+
+Acid Matrix:
+
+Citric - Citric: 1
+         Acetic: 0.4
+         Lactic: 0.6
+         Malic: 0.85
+         Tartaric: 0.75
+
+Acetic - Acetic: 1
+         Lactic: 0.65
+         Malic: 0.45
+         Tartaric: 0.35
+
+Lactic - Lactic: 1
+         Malic: 0.65
+         Tartaric: 0.55
+
+Malic - Malic: 1
+        Tartaric: 0.8
+
+Tartaric - Tartaric: 1
+_____________________________________________________________________________________________________________________
+
+
+**ingredient-level signals**
+
+For each pair of flavours i, j, compute:
+
+C(i, j) = 100 x clamp(W_p ⋅ S_profile + W_c ⋅ S_category + W_s ⋅ S_strength + W_a ⋅ S_acid, 0,1)  
+
+C(i, j) = compatibility between flavour i and j (as a %)
+
+Signals
+W_p = weight of profile 
+W_c = weight of category
+W_s = weight of strength
+W_a = weight of acid
+
+S_profile = similarity score between flavour profiles
+S_category = similarity score between categories
+S_strength = intesity compatibility score
+S_acid = acid compatibility score 
+
+
+**3. render compatibility score**
+Render percentage along with visual
+
+
+If you have N flavours:
+- Create an NxN matrix
+- Diagonal is 100 (self-compatibility)
+- Enforce symmetry: $C_{ij} = C_{ji}$ by averaging both directions if needed
+- Save as:
+`{ flavourId: { otherFlavourId: score } }` or a 2D array for faster lookup
+
+**4. Normalize and bucket for UX**
+Convert score to labels:
+- 80-100: Excellent
+- 60-79: Good
+- 40-59: Experimental
+- 0-39: Low
+
+This gives you both a number and human-readable guidance.
+
+**5. Render as a heatmap + pair explorer**
+- Rows/columns = flavour names
+- Cell color = compatibility score
+- Click a cell to show “why” breakdown (profile, category, recipe evidence)
+- Add sorting/filtering by profile or category
+
+**6. Improve over time with feedback**
+When users like/dislike pairings:
+- Store feedback as +1/-1
+- Update scores incrementally:
+$C'_{ij} = (1-\alpha)C_{ij} + \alpha F_{ij}$
+with small $\alpha$ (e.g. 0.1)
+
+This turns it from static rules into a learning system.
+
+If you want, I can implement a first pass directly in your app: seed matrix + pairwise calculator + compatibility heatmap-ready output.
