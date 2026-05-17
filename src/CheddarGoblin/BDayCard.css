@@ -188,25 +188,10 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	cursor: pointer;
 	transition: all 0.3s;
 	margin-bottom: 20px;
 	position: relative;
 	overflow: hidden;
-}
-
-.photo-placeholder:hover {
-	border-color: rgba(196, 162, 224, 0.8);
-	background: rgba(196, 162, 224, 0.06);
-}
-
-.photo-placeholder input[type='file'] {
-	position: absolute;
-	inset: 0;
-	opacity: 0;
-	cursor: pointer;
-	width: 100%;
-	height: 100%;
 }
 
 .uploaded-photo {
@@ -242,19 +227,9 @@
 	font-family: Georgia, serif;
 	text-align: center;
 	outline: none;
-	resize: none;
 	min-height: 70px;
 	line-height: 1.6;
-	transition: border-color 0.3s;
-}
-
-.quote-area::placeholder {
-	color: rgba(196, 162, 224, 0.35);
-	font-style: italic;
-}
-
-.quote-area:focus {
-	border-color: rgba(196, 162, 224, 0.6);
+	white-space: pre-wrap;
 }
 
 .final-quote {

@@ -1,41 +1,80 @@
 import { useEffect, useRef, useState } from 'react';
 import './BDayCard.css';
+import slide1Image from './Image/89029c6a-0092-4b50-a170-14077ae10154.JPG';
+import slide2Image from './Image/IMG_0109.png';
+import slide3Image from './Image/IMG_0007.png';
+import slide4Image from './Image/IMG_3656.JPG';
+import slide5Image from './Image/53234660-d6d8-4eb3-9e3f-66a05ee3e799.JPG';
+import slide6Image from './Image/IMG_3817.png';
+import slide7Image from './Image/IMG_0094.png';
+import slide8Image from './Image/2cccec50-9381-41dd-8808-17fdb5373bf1.JPG';
+import slide9Image from './Image/b6e0a3b9-f118-4fd1-867a-e4aacfcce0fa.JPG';
 
-const TOTAL_SLIDES = 6;
+const TOTAL_SLIDES = 11;
 
 const photoSlides = [
 	{
-		label: 'A moment I love',
-		emoji: '🌸',
-		placeholder: 'Tap to add a photo',
-		quotePlaceholder: 'Write something beautiful here...',
+		label: 'To the love of my life x',
+		imageSrc: slide1Image,
+		imageAlt: 'To the love of my life x',
+		quote: 'Every time I look at you',
 	},
 	{
-		label: 'Us',
-		emoji: '💜',
-		placeholder: 'Tap to add a photo',
-		quotePlaceholder: 'A memory, a feeling, a reason...',
+		label: 'To the love of my life x',
+		imageSrc: slide2Image,
+		imageAlt: 'To the love of my life x',
+		quote: 'All I can think about is how lucky I am to have you in my life.',
 	},
 	{
-		label: "A place we've been",
-		emoji: '🌿',
-		placeholder: 'Tap to add a photo',
-		quotePlaceholder: 'Where were we? What did it feel like?',
+		label: "To the love of my life x",
+		imageSrc: slide3Image,
+		imageAlt: "To the love of my life x",
+		quote: 'I think about the small things, like making pasta together,',
 	},
 	{
-		label: 'My favourite photo of you',
-		emoji: '⭐',
-		placeholder: 'Tap to add a photo',
-		quotePlaceholder: 'Tell her what this photo means to you...',
+		label: 'To the love of my life x',
+		imageSrc: slide4Image,
+		imageAlt: 'To the love of my life x',
+		quote: 'and eating good food, or at least trying to...',
+	},
+	{
+		label: 'To the love of my life x',
+		imageSrc: slide5Image,
+		imageAlt: 'To the love of my life x',
+		quote: 'And the big things, like seeing new places,',
+	},
+	{
+		label: 'To the love of my life x',
+		imageSrc: slide6Image,
+		imageAlt: 'To the love of my life x',
+		quote: 'and experiencing new things, but most importantly....',
+	},
+	{
+		label: 'To the love of my life x',
+		imageSrc: slide7Image,
+		imageAlt: 'To the love of my life x',
+		quote: 'the fact that I get to go through life with you,',
+	},
+	{
+		label: 'To the love of my life x',
+		imageSrc: slide8Image,
+		imageAlt: 'To the love of my life x',
+		quote: 'is something I cherish and I cannot express how much you mean to me.',
+	},
+	{
+		label: 'To the love of my life x',
+		imageSrc: slide9Image,
+		imageAlt: 'To the love of my life x',
+		quote: 'You are the most amazing person I have ever met, Happy Birthday my darling goblin',
 	},
 ];
+
+const finalSlideMessage = 'I will share a ciggarette with you always and forever x';
 
 function BDayCard() {
 	const [current, setCurrent] = useState(0);
 	const [exiting, setExiting] = useState(null);
 	const [direction, setDirection] = useState('left');
-	const [photos, setPhotos] = useState([null, null, null, null]);
-	const [quotes, setQuotes] = useState(['', '', '', '', '']);
 	const canvasRef = useRef(null);
 	const frameRef = useRef(null);
 
@@ -138,23 +177,6 @@ function BDayCard() {
 		}, 350);
 	};
 
-	const handlePhotoUpload = (event, idx) => {
-		const file = event.target.files?.[0];
-		if (!file) return;
-
-		const reader = new FileReader();
-		reader.onload = (loadEvent) => {
-			const result = loadEvent.target?.result;
-			if (typeof result !== 'string') return;
-			setPhotos((prev) => {
-				const next = [...prev];
-				next[idx] = result;
-				return next;
-			});
-		};
-		reader.readAsDataURL(file);
-	};
-
 	const renderDots = () => {
 		return (
 			<div className="bday-dots">
@@ -243,52 +265,25 @@ function BDayCard() {
 								<section key={slide.label} className={getSlideClassName(slideIndex, 'slide-photo')}>
 									<div className="photo-frame">
 										<p className="slide-label">✦ {slide.label} ✦</p>
-										<label className="photo-placeholder" htmlFor={`photo-upload-${idx}`}>
-											{photos[idx] ? (
-												<img src={photos[idx]} alt={`Slide ${slideIndex} upload`} className="uploaded-photo" />
+										<div className="photo-placeholder" aria-label={`Slide ${slideIndex} image`}>
+											{slide.imageSrc ? (
+												<img src={slide.imageSrc} alt={slide.imageAlt} className="uploaded-photo" />
 											) : (
-												<>
-													<span className="upload-icon">{slide.emoji}</span>
-													<span className="upload-hint">{slide.placeholder}</span>
-												</>
+												<span className="upload-hint">Set imageSrc in BDayCard.js for this slide.</span>
 											)}
-											<input
-												id={`photo-upload-${idx}`}
-												type="file"
-												accept="image/*"
-												onChange={(event) => handlePhotoUpload(event, idx)}
-											/>
-										</label>
-										<textarea
-											className="quote-area"
-											placeholder={slide.quotePlaceholder}
-											value={quotes[idx]}
-											onChange={(event) => {
-												const next = [...quotes];
-												next[idx] = event.target.value;
-												setQuotes(next);
-											}}
-										/>
+										</div>
+										<div className="quote-area">{slide.quote}</div>
 									</div>
 									{renderNav()}
 								</section>
 							);
 						})}
 
-						<section className={getSlideClassName(5, 'slide-final')}>
+						<section className={getSlideClassName(10, 'slide-final')}>
 							<span className="heart-burst">💜</span>
 							<div className="big-23">23</div>
 							<div className="years-label">Years of you</div>
-							<textarea
-								className="quote-area final-quote"
-								placeholder="Write your big birthday message here - the one that really says it all..."
-								value={quotes[4]}
-								onChange={(event) => {
-									const next = [...quotes];
-									next[4] = event.target.value;
-									setQuotes(next);
-								}}
-							/>
+							<div className="quote-area final-quote">{finalSlideMessage}</div>
 							<div className="flower-row small">
 								<span>✿</span>
 								<span>✿</span>
