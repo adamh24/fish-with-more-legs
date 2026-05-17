@@ -13,6 +13,7 @@ import FlavourEngine from './Pages/FlavourEngine';
 import AdminGate from './Admin/AdminGate';
 import AdminPage from './Admin/AdminPage';
 import BarPlan from './Admin/BarPlan';
+import BDayCard from './CheddarGoblin/BDayCard';
 
 function App() {
   const [showContact, setShowContact] = useState(false);
@@ -49,6 +50,7 @@ function App() {
           <Route path="/admin-gate" element={<AdminGate />} />
           <Route path="/admin" element={<AdminPage />} />
           <Route path="/bar-plan" element={<BarPlan />} />
+          <Route path="/cheddar-goblin" element={<BDayCard />} />
         </Routes>
 
         {showContact && (
