@@ -4,14 +4,14 @@ import '../Style/BarPlan.css';
 const checklist = [
   {
     "phase": "Phase 1 — Concept & Funding",
-    "label": "12–18 months out",
+    "label": "12-18 months out",
     "sections": [
       {
         "title": "Decisions",
         "items": [
           "Fix your concept, niche, and positioning",
           "Decide on target neighbourhood (Merchant City, Finnieston, Dennistoun etc.)",
-          "Set target capacity (recommended 30–50 covers)",
+          "Set target capacity (recommended 30-50 covers)",
           "Set target cocktail price point",
           "Decide on company structure (Limited Company recommended)",
           "Choose your trading name",
@@ -34,7 +34,7 @@ const checklist = [
       {
         "title": "Funding & Payments",
         "items": [
-          "Calculate total startup budget (typically £150k–£400k)",
+          "Calculate total startup budget (typically £150k-£400k)",
           "Confirm personal capital contribution",
           "Apply for Start Up Loan via British Business Bank (up to £25k per director)",
           "Approach Royal Bank of Scotland / Bank of Scotland for commercial loan",
@@ -47,7 +47,7 @@ const checklist = [
   },
   {
     "phase": "Phase 2 — Legal & Licensing",
-    "label": "10–14 months out",
+    "label": "10-14 months out",
     "sections": [
       {
         "title": "Decisions",
@@ -75,7 +75,7 @@ const checklist = [
       {
         "title": "Payments",
         "items": [
-          "Premises Licence application fee (approx £1,800–£3,500)",
+          "Premises Licence application fee (approx £1,800-£3,500)",
           "Personal Licence qualification fee (approx £200)",
           "Personal Licence application fee (£50)",
           "Licensing solicitor retainer",
@@ -87,14 +87,14 @@ const checklist = [
   },
   {
     "phase": "Phase 3 — Finding & Leasing a Site",
-    "label": "8–12 months out",
+    "label": "8-12 months out",
     "sections": [
       {
         "title": "Decisions",
         "items": [
           "Fix your target area and street",
           "Set maximum rent budget",
-          "Set minimum and maximum floor size (800–1,800 sq ft recommended)",
+          "Set minimum and maximum floor size (800-1,800 sq ft recommended)",
           "Decide lease length to target (5-year with year-3 break recommended)"
         ]
       },
@@ -108,9 +108,9 @@ const checklist = [
           "Engage a Scottish commercial property solicitor",
           "Check whether property is listed (Listed Building Consent requirements)",
           "Submit planning application if required (allow 8+ weeks)",
-          "Apply for building warrant if structural alterations planned (allow 6–10 weeks)",
+          "Apply for building warrant if structural alterations planned (allow 6-10 weeks)",
           "Notify Scottish Fire and Rescue Service ahead of inspection",
-          "Negotiate and sign lease: Rent-free period (3–6 months standard for fit-out)",
+          "Negotiate and sign lease: Rent-free period (3-6 months standard for fit-out)",
           "Negotiate and sign lease: Tenant break clause at year 3",
           "Negotiate and sign lease: Licence conditional break clause (exit right if premises licence refused)",
           "Negotiate and sign lease: Assignment and subletting rights",
@@ -120,7 +120,7 @@ const checklist = [
       {
         "title": "Payments",
         "items": [
-          "Lease deposit (typically 3–6 months rent)",
+          "Lease deposit (typically 3-6 months rent)",
           "First month's rent",
           "Commercial property solicitor fees",
           "Dilapidations survey fee",
@@ -132,7 +132,7 @@ const checklist = [
   },
   {
     "phase": "Phase 4 — Design & Fit-Out",
-    "label": "4–8 months out",
+    "label": "4-8 months out",
     "sections": [
       {
         "title": "Decisions",
@@ -152,7 +152,7 @@ const checklist = [
         "title": "Orders & Procurement",
         "items": [
           "Appoint contractor for fit-out (get minimum 3 quotes)",
-          "Order commercial ice machine — Hoshizaki or equivalent (£2k–£5k, long lead time)",
+          "Order commercial ice machine — Hoshizaki or equivalent (£2k-£5k, long lead time)",
           "Order under-bar refrigeration units",
           "Order back-bar display unit",
           "Order glassware — 3x expected covers (Riedel, Nude, or Zalto tier)",
@@ -182,13 +182,13 @@ const checklist = [
           "CCTV installation",
           "AV / music system installation",
           "POS system setup and licensing fee",
-          "Initial stock order (budget £8k–£15k)"
+          "Initial stock order (budget £8k-£15k)"
         ]
       },
       {
         "title": "Licences to Finalise",
         "items": [
-          "PPL PRS music licence (£600–£1,200/year depending on capacity)",
+          "PPL PRS music licence (£600-£1,200/year depending on capacity)",
           "Confirm Premises Licence is granted before booking any public-facing launch date",
           "Confirm DPM is named and Personal Licence held"
         ]
@@ -197,7 +197,7 @@ const checklist = [
   },
   {
     "phase": "Phase 5 — Team & Launch",
-    "label": "1–3 months out",
+    "label": "1-3 months out",
     "sections": [
       {
         "title": "Decisions",
@@ -205,8 +205,8 @@ const checklist = [
           "Fix opening hours for launch",
           "Decide soft launch format (invite-only preview vs ticketed event)",
           "Decide on reservations policy (walk-in only, reservations only, or mixed)",
-          "Set cocktail menu size (12–16 drinks recommended for launch)",
-          "Set pour cost target (18–22% for cocktails)",
+          "Set cocktail menu size (12-16 drinks recommended for launch)",
+          "Set pour cost target (18-22% for cocktails)",
           "Fix pricing for full menu"
         ]
       },
@@ -214,7 +214,7 @@ const checklist = [
         "title": "Hiring",
         "items": [
           "Hire head bartender / bar manager (confirm they hold or will get Personal Licence)",
-          "Hire bar team (2–3 bartenders + 1–2 bar backs for 40 covers)",
+          "Hire bar team (2-3 bartenders + 1-2 bar backs for 40 covers)",
           "Hire front-of-house staff",
           "Hire kitchen staff if serving food",
           "Have employment contracts drafted by a Scottish employment solicitor",
@@ -225,8 +225,8 @@ const checklist = [
       {
         "title": "Training & Menus",
         "items": [
-          "Develop and cost full cocktail menu (all 12–16 drinks)",
-          "Develop zero-proof menu (2–3 options minimum)",
+          "Develop and cost full cocktail menu (all 12-16 drinks)",
+          "Develop zero-proof menu (2-3 options minimum)",
           "Develop food / snack menu if applicable (allergen labelling required under Natasha's Law)",
           "Run minimum 2 weeks full staff training before opening",
           "Conduct internal dress rehearsal service (friends and family)",
@@ -265,7 +265,7 @@ const checklist = [
 
 const phases = [
   {
-    label: "Phase 1 — 12–18 months out",
+    label: "Phase 1 — 12-18 months out",
     title: "Concept & Funding",
     summary: "Define your bar's identity and secure the money to build it. Every decision downstream flows from this.",
     color: "#0C447C",
@@ -276,8 +276,8 @@ const phases = [
         sub: "Who are you, and why Glasgow needs you",
         body: `<ul>
           <li><strong>Positioning:</strong> High-end in Glasgow means competing with Cail Bruich-level hospitality. Decide your niche — Japanese-influenced, Scottish terroir spirits, classic cocktails, seasonal menus.</li>
-          <li><strong>Capacity:</strong> 30–50 covers is typical for an intimate high-end bar. Under 30 is a private bar; over 60 starts to dilute the experience.</li>
-          <li><strong>Price point:</strong> High-end Glasgow cocktails currently sit at £12–£18. Know your average spend per head.</li>
+          <li><strong>Capacity:</strong> 30-50 covers is typical for an intimate high-end bar. Under 30 is a private bar; over 60 starts to dilute the experience.</li>
+          <li><strong>Price point:</strong> High-end Glasgow cocktails currently sit at £12-£18. Know your average spend per head.</li>
           <li><strong>Name, identity, brand:</strong> Commission a designer early. Everything downstream — signage, menus, website, social — needs this locked in.</li>
         </ul>
         <div class=\\"callout tip\\">Glasgow's West End and Finnieston are saturated. Consider the Merchant City, Dennistoun, or the South Side for a high-end offer with less competition.</div>`
@@ -296,21 +296,21 @@ const phases = [
       },
       {
         title: "Secure funding",
-        sub: "Typical startup cost: £150,000–£400,000",
+        sub: "Typical startup cost: £150,000-£400,000",
         body: `<ul>
-          <li><strong>Personal capital:</strong> Lenders want to see you have skin in the game — typically 20–30% of total costs.</li>
-          <li><strong>Bank loans:</strong> Royal Bank of Scotland, Bank of Scotland. Expect 5–8% interest for hospitality, 3–7 year terms.</li>
+          <li><strong>Personal capital:</strong> Lenders want to see you have skin in the game — typically 20-30% of total costs.</li>
+          <li><strong>Bank loans:</strong> Royal Bank of Scotland, Bank of Scotland. Expect 5-8% interest for hospitality, 3-7 year terms.</li>
           <li><strong>Start Up Loans:</strong> UK government-backed, up to £25,000 per director at 6% fixed. Apply via British Business Bank.</li>
           <li><strong>Scottish Enterprise:</strong> The EDGE fund and Smart grants are worth exploring if you have a unique angle.</li>
           <li><strong>Angel investors:</strong> Scottish EDGE, Archangels. Pitch competitions can get you capital and PR simultaneously.</li>
           <li><strong>Friends &amp; family:</strong> Document everything legally. A shareholder agreement is non-negotiable.</li>
         </ul>
-        <div class=\\"callout cost\\">Rough startup cost breakdown: fit-out £80k–£200k, equipment £30k–£60k, licences &amp; legal £5k–£10k, initial stock £8k–£15k, deposit + first months rent £15k–£40k, working capital buffer £20k–£40k.</div>`
+        <div class=\\"callout cost\\">Rough startup cost breakdown: fit-out £80k-£200k, equipment £30k-£60k, licences &amp; legal £5k-£10k, initial stock £8k-£15k, deposit + first months rent £15k-£40k, working capital buffer £20k-£40k.</div>`
       }
     ]
   },
   {
-    label: "Phase 2 — 10–14 months out",
+    label: "Phase 2 — 10-14 months out",
     title: "Legal & Licensing",
     summary: "Scotland's licensing law is distinct from England's. Get this wrong and nothing else matters.",
     color: "#533C89",
@@ -320,9 +320,9 @@ const phases = [
         title: "Premises Licence (Licensing Scotland Act 2005)",
         sub: "Your most important document",
         body: `<ul>
-          <li><strong>Apply to:</strong> Glasgow City Licensing Board. Budget around £1,800–£3,500.</li>
+          <li><strong>Apply to:</strong> Glasgow City Licensing Board. Budget around £1,800-£3,500.</li>
           <li><strong>What they need:</strong> Operating Plan, site plan, layout plan, and a written Challenge 25 policy.</li>
-          <li><strong>Timescale:</strong> Minimum 3 months, often 4–6. Negotiate a conditional break clause before signing a lease.</li>
+          <li><strong>Timescale:</strong> Minimum 3 months, often 4-6. Negotiate a conditional break clause before signing a lease.</li>
           <li><strong>Hours:</strong> Glasgow city centre core hours run to 1am; extended hours (3am) attract more scrutiny.</li>
         </ul>
         <div class=\\"callout warn\\">Hire a specialist licensing solicitor in Scotland — English licensing law does not apply here. Anderson Strathern and Addleshaw Goddard both have Glasgow licensing teams.</div>`
@@ -343,7 +343,7 @@ const phases = [
         body: `<ul>
           <li><strong>Company structure:</strong> Register a Limited Company at Companies House (£12 online).</li>
           <li><strong>Food registration:</strong> Register with Glasgow City Council Environmental Health at least 28 days before opening. Free.</li>
-          <li><strong>Music licence:</strong> PPL PRS licence — around £600–£1,200/year depending on capacity.</li>
+          <li><strong>Music licence:</strong> PPL PRS licence — around £600-£1,200/year depending on capacity.</li>
           <li><strong>Public liability insurance:</strong> Minimum £5m cover. Employers' liability (£10m) is legally required.</li>
           <li><strong>GDPR:</strong> Register with the ICO (£40/year) and have a privacy policy if you take reservations.</li>
           <li><strong>Allergen compliance:</strong> Natasha's Law 2021 — full allergen labelling required if you serve food.</li>
@@ -353,7 +353,7 @@ const phases = [
     ]
   },
   {
-    label: "Phase 3 — 8–12 months out",
+    label: "Phase 3 — 8-12 months out",
     title: "Finding & Leasing a Site",
     summary: "The lease is your longest financial commitment. Treat it like a second business plan.",
     color: "#0F6E56",
@@ -364,7 +364,7 @@ const phases = [
         sub: "Location is everything — but so is the building",
         body: `<ul>
           <li><strong>Area:</strong> Merchant City, West End, Finnieston, King Street, St Vincent Street all have track records for premium hospitality.</li>
-          <li><strong>Size:</strong> 800–1,800 sq ft is ideal for 30–60 covers.</li>
+          <li><strong>Size:</strong> 800-1,800 sq ft is ideal for 30-60 covers.</li>
           <li><strong>Existing use class:</strong> Look for A3/A4/Sui Generis properties — changing use class adds months.</li>
           <li><strong>Agents:</strong> DM Hall, Savills Glasgow, and JLL all handle commercial F&amp;B property.</li>
         </ul>`
@@ -374,7 +374,7 @@ const phases = [
         sub: "Never sign the landlord's first draft",
         body: `<ul>
           <li><strong>Lease length:</strong> Aim for a 5-year lease with a tenant break at year 3.</li>
-          <li><strong>Rent-free period:</strong> Negotiate 3–6 months rent-free for fit-out. Landlords expect this.</li>
+          <li><strong>Rent-free period:</strong> Negotiate 3-6 months rent-free for fit-out. Landlords expect this.</li>
           <li><strong>Licence conditional break:</strong> Insist on a clause allowing you to exit if the premises licence is refused.</li>
           <li><strong>Assignment:</strong> Ensure you have the right to assign the lease if you sell the business.</li>
         </ul>
@@ -386,14 +386,14 @@ const phases = [
         body: `<ul>
           <li><strong>Planning permission:</strong> If the space hasn't been used as a bar before, you'll need planning consent. Allow 8+ weeks.</li>
           <li><strong>Listed buildings:</strong> Glasgow's Merchant City has many listed buildings — internal alterations may require Listed Building Consent.</li>
-          <li><strong>Building warrant:</strong> Required for most structural alterations. Budget 6–10 weeks.</li>
+          <li><strong>Building warrant:</strong> Required for most structural alterations. Budget 6-10 weeks.</li>
           <li><strong>Fire safety:</strong> Scottish Fire and Rescue Service will inspect before opening.</li>
         </ul>`
       }
     ]
   },
   {
-    label: "Phase 4 — 4–8 months out",
+    label: "Phase 4 — 4-8 months out",
     title: "Design & Fit-Out",
     summary: "Your interior is your brand made physical. High-end doesn't mean expensive — it means intentional.",
     color: "#854F0B",
@@ -414,8 +414,8 @@ const phases = [
         title: "Equipment & bar kit",
         sub: "What every serious cocktail bar needs",
         body: `<ul>
-          <li><strong>Ice:</strong> A Hoshizaki or similar commercial ice machine — budget £2k–£5k.</li>
-          <li><strong>Glassware:</strong> Riedel, Nude, or Zalto-tier glass — £15–£40 per stem. Buy 3x your expected covers for breakage.</li>
+          <li><strong>Ice:</strong> A Hoshizaki or similar commercial ice machine — budget £2k-£5k.</li>
+          <li><strong>Glassware:</strong> Riedel, Nude, or Zalto-tier glass — £15-£40 per stem. Buy 3x your expected covers for breakage.</li>
           <li><strong>POS system:</strong> Lightspeed, TouchBistro, or Tevalis.</li>
           <li><strong>CCTV:</strong> Glasgow Licensing Board may require it. A 28-day recording loop is standard.</li>
         </ul>`
@@ -432,7 +432,7 @@ const phases = [
     ]
   },
   {
-    label: "Phase 5 — 1–3 months out",
+    label: "Phase 5 — 1-3 months out",
     title: "Team & Launch",
     summary: "The bar is only as good as the people in it. Hire well, train obsessively, launch carefully.",
     color: "#993556",
@@ -443,7 +443,7 @@ const phases = [
         sub: "The bar manager is the most critical hire",
         body: `<ul>
           <li><strong>Head bartender / bar manager:</strong> Track record in high-end bars, holds (or will get) a Personal Licence.</li>
-          <li><strong>Bar team:</strong> 2–3 experienced bartenders for a 40-cover bar, plus 1–2 bar backs.</li>
+          <li><strong>Bar team:</strong> 2-3 experienced bartenders for a 40-cover bar, plus 1-2 bar backs.</li>
           <li><strong>Employment contracts:</strong> Use a Scottish employment law solicitor.</li>
           <li><strong>Living Wage:</strong> The Real Living Wage (currently £12/hour) is a baseline for quality staff.</li>
         </ul>
@@ -453,8 +453,8 @@ const phases = [
         title: "Menus, training & soft launch",
         sub: "Test everything before the public sees it",
         body: `<ul>
-          <li><strong>Menu development:</strong> 12–16 cocktails at launch. Include 2–3 zero-proof options.</li>
-          <li><strong>Costing:</strong> Target a pour cost of 18–22% for cocktails.</li>
+          <li><strong>Menu development:</strong> 12-16 cocktails at launch. Include 2-3 zero-proof options.</li>
+          <li><strong>Costing:</strong> Target a pour cost of 18-22% for cocktails.</li>
           <li><strong>Training:</strong> At least 2 weeks of full staff training before opening.</li>
           <li><strong>Soft launch:</strong> Invite friends, industry contacts, and local press. Gather feedback before the public launch.</li>
           <li><strong>Reservations:</strong> ResDiary (Glasgow's most used) or Resy.</li>
