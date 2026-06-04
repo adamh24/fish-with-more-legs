@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { doc, getDoc, serverTimestamp, setDoc } from 'firebase/firestore';
+import { db } from '../firebase';
 import '../Style/BarPlan.css';
 
 const checklist = [
@@ -475,6 +477,27 @@ const phases = [
   }
 ];
 
+const BAR_PLAN_DOC = doc(db, 'adminData', 'barPlanChecklist');
+
+function readLocalChecklistState() {
+  let checked = {};
+  let notes = {};
+
+  try {
+    checked = JSON.parse(localStorage.getItem('bp-checked') || '{}');
+  } catch {
+    checked = {};
+  }
+
+  try {
+    notes = JSON.parse(localStorage.getItem('bp-notes') || '{}');
+  } catch {
+    notes = {};
+  }
+
+  return { checked, notes };
+}
+
 function StepCard({ step, index, phaseColor, phaseBg }) {
   const [open, setOpen] = useState(false);
 
@@ -572,18 +595,97 @@ function ChecklistSection({ section, sectionIndex, phaseIndex, checked, notes, n
 
 function ChecklistView() {
   const [activePhase, setActivePhase] = useState(0);
-  const [checked, setChecked] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('bp-checked') || '{}'); } catch { return {}; }
-  });
-  const [notes, setNotes] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('bp-notes') || '{}'); } catch { return {}; }
-  });
+  const [checked, setChecked] = useState({});
+  const [notes, setNotes] = useState({});
   const [noteOpen, setNoteOpen] = useState({});
+  const hasLoadedInitialData = useRef(false);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadChecklistState = async () => {
+      try {
+        const snapshot = await getDoc(BAR_PLAN_DOC);
+
+        if (!isMounted) {
+          return;
+        }
+
+        if (snapshot.exists()) {
+          const data = snapshot.data();
+          setChecked(data.checked || {});
+          setNotes(data.notes || {});
+        } else {
+          const local = readLocalChecklistState();
+          setChecked(local.checked);
+          setNotes(local.notes);
+
+          const hasLocalData =
+            Object.keys(local.checked).length > 0 ||
+            Object.keys(local.notes).length > 0;
+
+          if (hasLocalData) {
+            await setDoc(
+              BAR_PLAN_DOC,
+              {
+                checked: local.checked,
+                notes: local.notes,
+                updatedAt: serverTimestamp()
+              },
+              { merge: true }
+            );
+          }
+        }
+      } catch {
+        if (!isMounted) {
+          return;
+        }
+
+        const local = readLocalChecklistState();
+        setChecked(local.checked);
+        setNotes(local.notes);
+      } finally {
+        if (isMounted) {
+          hasLoadedInitialData.current = true;
+        }
+      }
+    };
+
+    loadChecklistState();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!hasLoadedInitialData.current) {
+      return;
+    }
+
+    localStorage.setItem('bp-checked', JSON.stringify(checked));
+    localStorage.setItem('bp-notes', JSON.stringify(notes));
+
+    const timeoutId = setTimeout(() => {
+      setDoc(
+        BAR_PLAN_DOC,
+        {
+          checked,
+          notes,
+          updatedAt: serverTimestamp()
+        },
+        { merge: true }
+      ).catch(() => {
+        // Keep local storage as fallback if Firestore write fails.
+      });
+    }, 300);
+
+    return () => clearTimeout(timeoutId);
+  }, [checked, notes]);
 
   const toggleChecked = (id) => {
     const next = { ...checked, [id]: !checked[id] };
     setChecked(next);
-    localStorage.setItem('bp-checked', JSON.stringify(next));
   };
 
   const toggleNoteOpen = (id) => {
@@ -593,7 +695,6 @@ function ChecklistView() {
   const updateNote = (id, value) => {
     const next = { ...notes, [id]: value };
     setNotes(next);
-    localStorage.setItem('bp-notes', JSON.stringify(next));
   };
 
   const totalAll = checklist.reduce((a, p) => a + p.sections.reduce((b, s) => b + s.items.length, 0), 0);
